@@ -1,0 +1,212 @@
+Help on module loadShortcuts:
+
+NAME
+    loadShortcuts
+
+DESCRIPTION
+    Generate a Javascript file that contains the definitions of the shortcuts
+    used in the Windows start menu toolbars and taskbar.
+
+    To run: C>py loadShortcuts.py
+    To generate pydoc:
+        py -m pydoc loadShortcuts | py %PYTHONPATH%\pydocCleanup.py > ..\scriptDoc\loadShortcuts.txt
+
+    The properties.dbf file contains the list of the directories that are searched
+    for .lnk files.  The directory list is compiled from the toolbars and pinned
+    property groups.
+
+    References:
+    https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-showwindow - For WINSTATE dictionary
+
+CLASSES
+    builtins.object
+        tbProc
+
+    class tbProc(builtins.object)
+     |  tbProc(dirs: list, titleProc: Callable[[str], str])
+     |
+     |  Data for toolbar directory processing
+     |
+     |  Args:
+     |      dirs (list): List of directories associated with a toolbar group.
+     |      titleProc (Callable[[str], str]): Lambda function to generate the toolbar title.
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, dirs: list, titleProc: Callable[[str], str])
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+FUNCTIONS
+    generateFinish(jsFile: <class 'TextIO'>) -> None
+        Write the end of the shortcuts.js file.
+
+        Args:
+            jsFile (TextIO): JavaScript output file.
+
+    generateHeader(jsFile: <class 'TextIO'>) -> None
+        Write the top part of the shortcuts.js file.
+
+        Args:
+            jsFile (TextIO): JavaScript output file.
+
+    getToolBarName(tbPath: str) -> str
+        Determine the name of the toolbar from the path.
+
+        Args:
+            tbPath (str): Path from the INI file.
+
+        Returns:
+            str: The last component of tbPath.
+
+    listFiles(
+        jsFile: <class 'TextIO'>,
+        dirName: str,
+        tbName: str,
+        startWithNewLine: bool
+    ) -> bool
+        List the files in a directory and all of it's sub-directories.
+
+        Args:
+            jsFile (TextIO): JavaScript output file.
+            dirName (str): List the files starting in this directory.
+            tbName (str): Name of the toolbar.
+            startWithNewLine (bool): True to start with a new line, False to write on the current line.
+
+        Returns:
+            bool: The updated startWithNewLine value.
+
+    main() -> int
+        Main program.
+
+        Returns:
+            int: System return code.
+
+    process(jsFile: <class 'TextIO'>) -> None
+        Generate the JavaScript shortcut entries based on the directories listed
+        in the properties.dbf file.
+
+        Args:
+            jsFile (TextIO): JavaScript output file.
+
+    processHotKey(
+        jsFile: <class 'TextIO'>,
+        jsonSection: dict,
+        key: str,
+        writeSep: bool
+    ) -> None
+        Process the shortcut key if present.  The key consists of two bytes.
+        The first eight bits are the ASCII code of the alphanumeric key associated
+        with the hot key.
+
+        Args:
+            jsFile (TextIO): JavaScript output file.
+            jsonSection (dict): The part of the JSON to scan for a key.
+            key (str): The JSON key to find in the jsonSection.
+            writeSep (bool): True to write the Javascript separator at the end.
+
+    processHotKeyModifiers(hkMods: int) -> str
+        Process the hot key modifier and determine which modifier keys are depressed.
+
+        Args:
+            hkMods (int): The bits defining which modifier key (Ctrl, Alt, Shift) are required for the hotkey.
+
+        Returns:
+            str: String with some combination of Ctrl+Shift+Alt+.
+
+    writeJsonKey(
+        jsFile: <class 'TextIO'>,
+        jsonSection: dict,
+        key: str,
+        writeSep: bool,
+        defaultVal: str = ''
+    ) -> None
+        Escape the backslashes in a Windows path for inclusion in a Javascript file.
+
+        Args:
+            jsFile (TextIO): JavaScript output file.
+            jsonSection (dict): The part of the JSON to scan for a key.
+            key (str): The JSON key to find in the jsonSection.
+            writeSep (bool): True to write the Javascript separator at the end.
+            defaultValue (str): The value to use if the key is not found.
+
+    writeShortcut(
+        jsFile: <class 'TextIO'>,
+        shortcutFs: str,
+        tbName: str,
+        startWithNewLine: bool
+    ) -> None
+        Write the shortcut data to the output file.
+
+        Args:
+            jsFile (TextIO): JavaScript output file.
+            shortcutFs (str): File specification of the shortcut file.
+            tbName (str): Name of the toolbar.
+            startWithNewLine (bool): True to start with a new line, False to write on the current line.
+
+    writeWinStyle(
+        jsFile: <class 'TextIO'>,
+        jsonSection: dict,
+        key: str,
+        writeSep: bool
+    ) -> None
+        Process the window state.
+
+        Args:
+            jsFile (TextIO): JavaScript output file.
+            jsonSection (dict): The part of the JSON to scan for a key.
+            key (str): The JSON key to find in the jsonSection.
+            defaultValue (str): The value to use if the key is not found.
+
+DATA
+    Callable = typing.Callable
+        Deprecated alias to collections.abc.Callable.
+
+        Callable[[int], str] signifies a function that takes a single
+        parameter of type int and returns a str.
+
+        The subscription syntax must always be used with exactly two
+        values: the argument list and the return type.
+        The argument list must be a list of types, a ParamSpec,
+        Concatenate or ellipsis. The return type must be a single type.
+
+        There is no syntax to indicate optional or keyword arguments;
+        such function types are rarely used as callback types.
+
+    Final = typing.Final
+        Special typing construct to indicate final names to type checkers.
+
+        A final name cannot be re-assigned or overridden in a subclass.
+
+        For example::
+
+            MAX_SIZE: Final = 9000
+            MAX_SIZE += 1  # Error reported by type checker
+
+            class Connection:
+                TIMEOUT: Final[int] = 10
+
+            class FastConnector(Connection):
+                TIMEOUT = 1  # Error reported by type checker
+
+        There is no runtime checking of these properties.
+
+    JS_FILE_SPEC = r'C:\Src\sysdocs\include\shortcuts.js'
+    JS_PARM_SEP = "', '"
+    KEY_MODS = {'ALT': 4, 'CTRL': 2, 'SHIFT': 1}
+    NL = '\n'
+    WINSTATE = {'SW_FORCEMINIMIZE': 11, 'SW_HIDE': 0, 'SW_MAXIMIZE': 3, 'S...
+    __annotations__ = {'JS_FILE_SPEC': typing.Final[str], 'JS_PARM_SEP': t...
+
+FILE
+    c:\src\sysdocs\generate\loadshortcuts.py
+
+

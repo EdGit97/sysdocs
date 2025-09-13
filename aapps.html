@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel=stylesheet href='include/sysdocs.css' type='text/css'>
+    <link rel="icon" href="images/droid.png" type="image/x-icon" />
+	<script type='text/javascript' src='include/sysdocs.js'></script>
+	<script type='text/javascript' src='include/aapps.js'></script>
+	<script type='text/javascript' src='include/apps.js'></script>
+</head>
+<body>
+    <div class='main'>
+	    <script type='text/javascript'>makePageHead(androidSys, 'Applications', homeLinks.both, true);</script>
+		<div id='contentDiv' class='content'>
+			<h2 id='load' name='toc'><img src='images/download.png' alt='Download Icon' class='logo'>Load Applications</h2>
+			<p class='instructions'>
+				To update the list of installed apps:
+			</p>
+			<ul class='instructions'>
+			    <li>Connect the Android device to this laptop.</li>
+			    <li>If asked, select File Transfer on the Android device.</li>
+			    <li>Open a command prompt.</li>
+			    <li>C&gt;cd\Src\sysdocs\generate</li>
+			    <li>C&gt;<a href='scriptDoc/adrApps.txt' target='_blank'>py adrApps.py</a></li>
+				<li>Disconnect the Android device from this laptop.</li>
+			</ul>
+			<h2 id='load' name='toc'><img src='images/apps.png' alt='Apps Icon' class='logo'>Applications List</h2>
+			<p class='instructions'>
+				Last updated:
+                <script type='text/javascript'>
+                    document.writeln(applu);
+                </script>
+			</p>
+			<p class='instructions'>
+			    Apps installed on Android device:
+			</p>
+			<ul id='appList' class='instructions'>
+			</ul>
+			<script type='text/javascript'>
+				showAdrApps();
+				setContentHeight();
+			</script>
+		</div>
+	</div>
+</body>
+</html>

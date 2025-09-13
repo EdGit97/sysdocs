@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel=stylesheet href='include/sysdocs.css' type='text/css'>
+    <link rel="icon" href="images/droid.png" type="image/x-icon" />
+	<script type='text/javascript' src='include/sysdocs.js'></script>
+</head>
+<body>
+    <div class='main'>
+	    <script type='text/javascript'>makePageHead(androidSys, 'Configuration', homeLinks.both, true);</script>
+		<div id='contentDiv' class='content'>
+			<script type='text/javascript'>
+				setContentHeight();
+			</script>
+			<p class='instructions'>
+			    This page describes identifying information about the device, 
+                finding the device if misplaced and setup of the Android system to 
+                support this site.
+			</p>
+			<h2 id='phone' name='toc'><img src='images/about.png' alt='About Icon' class='logo'>About</h2>
+			<p class='instructions'>
+                Device: moto g pure<br>
+                IMEI: 352304800983504<br>
+                First registered: November 6, 2021
+            <p>
+			<h2 id='find' name='toc'><img src='images/gps.png' alt='GPS Icon' class='logo'>Find Phone</h2>
+			<ol class='instructions'>
+                <li>Open <a href='https://www.google.com/android/find/' target='_blank'>Google Find My Device</a></li>
+                <li>Select "Motorola moto g pure"</li>
+                <li>Device&apos;s location will appear on the map.</li>
+            </ol>
+			<h2 id='interface' name='toc'><img src='images/net.png' alt='Network Icon' class='logo'>Windows/Android Interface Setup</h2>
+			<p class='instructions'>
+			    Enable Developer Options on the Android device:
+			</p>
+			<ol class='instructions'>
+			    <li>
+				    Settings -&gt; About phone -&gt Build number -&gt Tap the 
+					build number seven times until until you get a message 
+					"You are now a developer!"
+				</li>
+			    <li>
+				    Settings -&gt; System -&gt Developer options -&gt USB 
+					debugging: ON
+				</li>
+			    <li>Connect the Android device to a USB port on this laptop.</li>
+			</ol>
+			<p class='instructions'>
+			    On the Windows laptop:
+			</p>
+			<ol class='instructions'>
+			    <li>
+				    Download the <a href='https://developer.android.com/tools/releases/platform-tools' target='_blank'>Android Debug Bridge</a> 
+					to C:\Src\setups.
+				</li>
+			    <li>
+				    Open C:\Src\setups\platform-tools_r34.0.4-windows.zip and 
+					extract the platform-tools directory to C:\Src\CellPhone.
+				</li>
+			    <li>See attached devices: C&gt;adb devices -l</li>
+			    <li>
+				    Download <a href='https://github.com/theaetetus/AndroidApkMaker/blob/master/android_apkmaker/src/main/assets/aapt-arm-pie' target='_blank'>aapt</a>.
+					This utility takes a package identifier and determines the 
+					common name of the associated application.
+				</li>
+			    <li>In GitHub: ... -> Download -> C:\Src\CellPhone\platform-tools</li>
+				<li>Copy the aapt app to the Android device: C&gt;adb push aapt-arm-pie /data/local/tmp/aapt</li>
+				<li>Make aapt an executable: C&gt;adb shell chmod 0755 /data/local/tmp/aapt</li>
+				<li>
+				    To download the application list to this site, see 
+					instructions at the top of the 
+					<a href='aapps.html'>Android Application</a> page.
+				</li>
+			</ol>
+			<p class='instructions'>
+			    It is also possible to use the Android Debug Bridge (adb) to
+				access the command shell. C&gt;adb shell
+			</p>
+			<h2 id='Links' name='toc'><img src='images/links.png' alt='Links Icon' class='logo'>Links</h2>
+			<p class='instructions'>
+				<a href='https://developer.android.com/studio/debug/dev-options#enable' target='_blank'>Enable Developer mode</a><br>
+				<a href='https://developer.android.com/tools/adb' target='_blank'>Android Debug Bridge</a><br>
+				<a href='https://learn2automate.wordpress.com/2013/11/20/how-to-read-command-line-output-with-vbscript/' target='_blank'>
+				    VBScript - Read the output of a utility that was run from the command line.
+				</a>
+			</p>
+		</div>
+	</div>
+</body>
+</html>

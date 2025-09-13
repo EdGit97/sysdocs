@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel=stylesheet href='include/sysdocs.css' type='text/css'>
+    <link rel="icon" href="images/win11.png" type="image/x-icon" />
+	<script type='text/javascript' src='include/sysdocs.js'></script>
+</head>
+<body>
+    <div class='main'>
+	    <script type='text/javascript'>makePageHead(winSys, 'Notes', homeLinks.both, true);</script>
+		<div id='contentDiv' class='content'>
+			<script type='text/javascript'>
+				setContentHeight();
+			</script>
+			<p class='instructions'>
+			    This page describes the purpose of this site and a number of 
+				miscellaneous operations.
+			</p>
+			<h2 id='About' name='toc'><img src='images/about.png' alt='About Icon' class='logo'>About This Site</h2>
+			<p class='instructions'>
+				The Windows System Documentation site was created in order to 
+				document the details of the configuration of this Windows 
+				laptop.  Each page documents a specific area of the system 
+				configuration.  
+			</p>
+			<p class='instructions'>
+				The Start Menu and Firefox Bookmarks pages do not use data 
+				directly from the Start Menu and bookmarks directories. The 
+				pages instead use offline data that is copied to this site by 
+				the generate\getShortcut.vbs utility and the Firefox Manage 
+				Bookmarks, Import and Backup tool. The reason for this is,
+				that if the system needs to be rebuilt from scratch, then the
+				generated offline files can be used as a source to rebuild 
+				the applicable parts of the system.
+			</p>
+			<p class='instructions'>
+                The Backup Operations page maintains a list of extermal backup
+                media and the number of times each storage device has been used.
+                For details see the Backup Operations 
+                <a href='backups.jsp#Tech'>Technical Summary</a>.
+            </p>
+			<p class='instructions'>
+			    The remaining pages consist of static instructions that, when 
+				followed, allow the referenced part of the system to be 
+				re-installed and configured.
+			</p>
+			<h2 id='WinSet' name='toc'><img src='images/win11.png' alt='Win 11 Logo' class='logo'>Windows Settings</h2>
+			<h4>System</h4>
+            <table class='instructions'>
+                <tr><td class='hdr'>Model</td><td>HP Pavilion Aero Laptop 13-be0xxx</td></tr>
+                <tr><td class='hdr'>Serial</td><td>8CG1493BHD</td></tr>
+                <tr><td class='hdr'>OS</td><td>Microsoft Windows 11 Home</td></tr>
+                <tr><td class='hdr'>Version</td><td>10.0.22621 Build 22621</td></tr>
+                <tr><td class='hdr'>Name</td><td>ED-HP2</td></tr>
+                <tr><td class='hdr'>Memory</td><td>8.00 GB</td></tr>
+            </table>
+			<h4>File Explorer:</h4>
+			<ol class='instructions'>
+			    <li>Open This PC</li>
+			    <li>In the ribbon, click ... -&gt; Options</li>
+			    <li>Open File Exporer to: This PC</li>
+			    <li>OK</li>
+			</ol>
+			<h4>Disable Powershell 2.0:</h4>
+			<ol class='instructions'>
+			    <li>
+				    Control Panel -&gt; Programs -&gt; Programs and 
+					Features -&gt; Turn Windows features on or off
+				</li>
+			    <li>Uncheck "Windows Powershell 2.0</li>
+			    <li>OK</li>
+			    <li>Close</li>
+			</ol>
+			<h4>Change Powershell to Constrained Language Mode:</h4>
+			<ol class='instructions'>
+			    <li>Start -&gt; Windows Powershell -&gt; Windows Powershell</li>
+			    <li>PS&gt; $ExecutionContext.SessionState.LanguageMode</li>
+			    <li>
+				    If the response is "FullLanguage" continue with the steps below,
+					otherwise close Powershell
+				</li>
+			    <li>Control Panel -&gt; System and Security -&gt; System</li>
+				<li>Advanced system settings</li>
+				<li>Environment Variables...</li>
+				<li>System variables, click New...</li>
+				<ol class='instructions' type='a'>
+					<li>Variable name: __PSLockDownPolicy</li>
+					<li>Variable value: 4</li>
+					<li>OK</li>
+					<li>OK</li>
+					<li>OK</li>
+				</ol>
+			    <li>PS&gt; $ExecutionContext.SessionState.LanguageMode</li>
+				<li>Result should now be "ConstrainedLanguage".</li>
+			</ol>
+			<h4>Shutdown applications and utilities that are not being used:</h4>
+			<ol class='instructions'>
+				<li>
+				    Disconnect OneDrive from the laptop:
+					<ol class='instructions' type='a'>
+					    <li>In the System Tray, click the OneDrive icon.</li>
+					    <li>Gear -&gt; Settings</li>
+					    <li>Sync and backup</li>
+					    <li>Uncheck all directories.</li>
+					</ol>
+				</li>
+				<li>
+					Shutdown OneNote and OneDrive:
+					<ol class='instructions' type='a'>
+					    <li>Right-click blank area of the Taskbar -&gt; Task Manager</li>
+					    <li>Startup apps</li>
+					    <li>Right-click ONENOTE.EXE -&gt; Disable</li>
+					    <li>Right-click OneDrive.exe -&gt; Disable</li>
+						<li>Close Task Manager</li>
+					</ol>
+				</li>
+			</ol>
+			<h4>Power Reset</h4>
+			<ol class='instructions'>
+                <li>Turn off the computer.</li>
+                <li>Disconnect the AC adapter.</li>
+                <li>Remove any discs from the disc drive.</li>
+                <li>Remove memory cards from the card reader slot.</li>
+                <li>
+                    Disconnect all nonessential peripheral devices, 
+                    such as printers, scanners, external hard drives, 
+                    and USB flash drives.
+                </li>
+                <li>
+                    With the AC adapter unplugged, press and hold 
+                    the power button for approximately 15 seconds.
+                </li>
+                <li>Reconnect the AC adapter, and then turn on the computer.</li>
+            </ol>
+			<h4>Windows 11 Media Creation Tool - Install</h4>
+			<ol class='instructions'>
+                <li><a href='https://support.microsoft.com/en-us/windows/create-installation-media-for-windows-99a58364-8c02-206f-aa6f-40c3b507420d#id0ejd=windows_11' target='_blank'>Download the Windows Media Creation Tool</a></li>
+                <li>Download Windows 11</li>
+                <li>Create Windows 11 Installation Media: Download Now</li>
+                <li>C:\Src\setups\mediacreationtool.exe</li>
+                <li>Run the mediacreationtool.exe</li>
+                <li>Accept</li>
+                <li>Select language and edition: Use the recommended option for this PC</li>
+                <li>Next</li>
+                <li>Plug in the flash drive that will be used for the recovery media.</li>
+                <li>Choose which media to use: USB flash drive</li>
+                <li>Next</li>
+                <li>Select a USB flash drive: D: (USB DISK)</li>
+                <li>Next</li>
+                <li>Downloading Windows 11 , verify then create the media.</li>
+                <li>Your USB flash drive is ready: Finish</li>
+                <li>Eject the flash drive.</li>
+            </ol>
+			<h4>HP Pavilion Aero Laptop 13 - Windows 11 - Flash Drive Start</h4>
+			<ol class='instructions'>
+                <li>Power On</li>
+                <li>F9</li>
+                <li>USB Hard Drive (UEFI) - USB Disk 3.0 PMAP</li>
+                <li>Select language setting</li>
+                <li>Next</li>
+                <li>Select keyboard setting</li>
+                <li>Next</li>
+                <li>I would like to: Repair my PC</li>
+                <li>Next</li>
+                <li>Follow instructions to repair or reinstall Windows 11.</li>
+            </ol>
+			<h2 id='Passwords' name='toc'><img src='images/pwd.png' alt='Password Icon' class='logo'>Passwords</h2>
+			<p class='instructions'>
+			    Passwords are stored in C:\Backup\pwds.zip.  The ZIP file 
+                contains one password protected file, pwds.txt.  If the system 
+                needs to be rebuilt from scratch, pwds.zip is backed up, 
+                unencrypted, to Google Drive at My Drive/Backup/pwds.zip.  The 
+                Google Drive password and the Local Backup encryption 
+                password are also stored on the Android phone in 
+                <a href='anotes.html#Passwords'>FastNotePad:Passwords</a>
+			</p>
+			<h2 id='Accounting' name='toc'><img src='images/loo.png' alt='Libre OO Logo' class='logo'>Office Operations</h2>
+		    <h4>Return address labels</h4>
+			<ul class='instructions'>
+				<li>Avery 8167</li>
+				<li>Print labels using C:\Users\swane\Documents\rtnlbls.odt</li>
+			</ul>
+			<h4>Envelope printing</h4>
+			<p class='instructions'>
+                The LibreOffice Writer envelope process has issues.  In order 
+				to print envelopes, use the following procedure:
+			</p>
+			<ul class='instructions'>
+				<li>File -&gt; Templates -&gt Manage Templates</li>
+				<li>Double-click EdEnvelope</li>
+				<li>Fill in the destination address.</li>
+				<li>
+				    Place an envelope in the bypass feeder. Flap down and 
+					to the left.
+				</li>
+				<li>Ctrl+P -&gt; Print</li>
+			</ul>
+			<h2 id='Python' name='toc'><img src='images/python.png' alt='Python Logo' class='logo'>Python</h2>
+			<h4>Installation</h4>
+			<ol class='instructions'>
+				<li>
+                    Download Python from 
+                    <a href='https://www.python.org/downloads/' target='_blank'>https://www.python.org/downloads/</a> 
+                    to C:\Src\setups.
+                </li>
+				<li>Install Python with C:\Src\setups\python-3.13.1-amd64.exe</li>
+                <li>
+                    Specify Python cache and library locations:
+                    <ol type='a'>
+                        <li>Control Panel -&gt; System and Securty -&gt; System -&gt; Advance system settings</li>
+                        <li>Environment Variables</li>
+                        <li>Under "System variables", click New...</li>
+                        <li>
+                            Variable name: PYTHONPYCACHEPREFIX<br>
+                            Variable value: C:\Users\swane\AppData\Local\Programs\Python\pcache
+                        </li>
+                        <li>Under "System variables", click New...</li>
+                        <li>
+                            Variable name: PYTHONPATH<br>
+                            Variable value: C:\Src\Python\lib
+                        </li>
+                        <li>Ok</li>
+                        <li>Ok</li>
+                        <li>Ok</li>
+                        <li>Close the Control Panel</li>
+                        <li>Reboot</li>
+                    </ol>
+                </li>
+				<li>
+                    Download and install LnkParse3:
+                    <ol type='a'>
+                        <li>from <a href='https://pypi.org/project/LnkParse3/' target='_blank'>https://pypi.org/project/LnkParse3/</a> to C:\Src\setups.</li>
+                        <li>C&gt;cd \Src\setups</li>
+                        <li>C&gt;\Users\swane\AppData\Local\Programs\Python\Python313\Scripts\pip install LnkParse3</li>
+                    </ol>
+                </li>
+				<li>
+                    Download and install dbfread:
+                    <ol type='a'>
+                        <li>from <a href='https://github.com/olemb/dbfread' target='_blank'>olemb/dbfread</a>.</li>
+                        <li>Click the "&lt;&gt; Code" button.</li>
+                        <li>Download ZIP</li>
+                        <li>Save File</li>
+                        <li>OK</li>
+                        <li>C:\Src\setups</li>
+                        <li>Save</li>
+                        <li>Open C:\Src\setups\dbfread-master.zip</li>
+                        <li>
+                           Extract the dbfread directory to 
+                           C:\Users\swane\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbfread
+                        </li>
+                    </ol>
+                </li>
+				<li>
+                    Install the following libraries:
+                    <ol type='a'>
+                        <li>C&gt;cd \Users\swane\AppData\Local\Programs\Python\Python313\Scripts</li>
+                        <li>C&gt;pip install cryptography</li>
+                        <li>C&gt;pip install requests</li>
+                        <li>C&gt;pip install truststore</li>
+                        <li>C&gt;pip install wmi</li>
+                    </ol>
+                </li>
+            </ol>
+			<h4>Internal Libraries</h4>
+            <ul class='instructions'>
+                <li><a href='../Python/pydoc/loadIni.txt' target='_blank'>loadIni.py</a></li>
+                <li><a href='../Python/pydoc/LoadShellProps.txt' target='_blank'>LoadShellProps.py</a></li>
+                <li><a href='../Python/pydoc/playSound.txt' target='_blank'>playSound.py</a></li>
+                <li><a href='../Python/pydoc/pydocCleanup.txt' target='_blank'>pydocCleanup.py</a></li>
+                <li><a href='../Python/pydoc/sendMail.txt' target='_blank'>sendMail.py</a></li>
+                <li><a href='../Python/pydoc/sysProps.txt' target='_blank'>sysProps.py</a></li>
+                <li><a href='../Python/pydoc/util.txt' target='_blank'>util.py</a></li>
+            </ul>
+			<h4>Links</h4>
+            <ul class='instructions'>
+                <li><a href='https://www.python.org/' target='_blank'>Python Home Page</a></li>            
+                <li><a href='https://google.github.io/styleguide/pyguide.html#s3.8-comments-and-docstrings' target='_blank'>Google Python Style Guide</a></li>
+                <li><a href='https://pypi.org/project/LnkParse3/' target='_blank'>LnkParse3</a></li>
+                <li><a href='https://docs.python.org/3/library/index.html' target='_blank'>The Python Standard Library</a></li>
+            </ul>
+			<h2 id='PeaZip' name='toc'><img src='images/peazip.png' alt='PeaZip Logo' class='logo'>PeaZip</h2>
+			<h4>Installation</h4>
+			<ul class='instructions'>
+				<li>
+                    Obtain the installation file from the
+                    <a href='https://peazip.github.io/peazip-64bit.html' target='_blank'>
+                        PeaZip site
+                    </a>
+                    and save to C:\Src\setups\peazip-9.6.0.WIN64.exe
+                </li>
+				<li>Run C:\Src\setups\peazip-9.6.0.WIN64.exe to install.</li>
+				<li>
+                    Create a junction to allow the System Documentation site to access the PeaZip manual:<br>
+                    C>cd C:\Src\sysdocs<br>
+                    C>mklink /j pzDoc "C:\Program Files\PeaZip\res\share"
+                </li>
+				<li>Add /sysdocs/pzDoc to the Src, Src2 and RSrc excluded directory list.</li>
+            </ul>
+			<h4>Operations</h4>
+			<ul class='instructions'>
+                <li>PeaZip <a href='https://peazip.github.io/' target='_blank'>Home Page</a> doocumentation.</li>
+                <li>PeaZip <a href='https://peazip.github.io/peazip-command-line.html' target='_blank'>command line</a> doocumentation.</li>
+				<li><a href='http://localhost/sysdocs/pzDoc/peazip_help.pdf' target='_blank'>PeaZip Manual</a></li>
+            </ul>
+            <!--
+			<h2 id='blat' name='toc'><img src='images/blat.png' alt='Blat Logo' class='logo'>Blat Installation</h2>
+			<ol class='instructions'>
+				<li>
+                    Obtain the installation file from the
+                    <a href='https://www.blat.net/' target='_blank'>
+                        Blat Homepage
+                    </a>
+                    and save to C:\Src\setups\blat3224_64.full.zip
+                </li>
+				<li>Extract blat3224/full/blat.exe to C:\Src\sysdocs\generate\blat.exe</li>
+                <li>
+                    Load email account information into the Registry:
+                    <ol type='a'>
+                        <li>Open an Administrator: Command Prompt</li>
+                        <li>
+                            Install:<br>
+                            <code>C:\Src\sysdocs\generate&gt;blat -install smtpauth.earthlink.net ed353@earthlink.net 0 587 SysDocs -u ed353@earthlink.net &lt;Email Account Password&gt;</code>
+                            <p>
+                                Profile will be installed in the Registry at one or both of the following locations:<br>
+                                HKEY_CURRENT_USER\Software\Wow6432Node\Public Domain\Blat\SysDocs<br>
+                                HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Public Domain\Blat\SysDocs
+                            </p>
+                        </li>
+                        <li>
+                            Remove:<br>
+                            <code>C:\Src\sysdocs\generate&gt;blat -profile -delete SysDocs</code>
+                        </li>
+                        <li>
+                            To view existing profiles:<br>
+                            <code>C:\Src\sysdocs\generate&gt;blat -profile</code>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+            -->
+			<h2 id='simplenote' name='toc'><img src='images/simplenote.png' alt='Simplenote Logo' class='logo'>Simplenote Setup</h2>
+			<ol class='instructions'>
+				<li>Signup at <a href='https://simplenote.com/' target='_blank'>Simplenote</a></li>
+                <li>Create account with email and password.</li>
+                <li>Copy any notes into the app.</li>
+                <li>Add Simplenote bookmark to Firefox: https://app.simplenote.com/</li>
+                <li>Keyboard Shortcuts: Ctrl+/</li>
+            </ol>
+			<h2 id='less' name='toc'><img src='images/lt.png' alt='Simplenote Logo' class='logo'>Less</h2>
+			<p class='instructions'>
+				Extract less.exe from \Src\setups\less-x86.zip to C:\Windows\system32.
+            </p>
+		</div>
+	</div>
+</body>
+</html>

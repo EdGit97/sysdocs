@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel='stylesheet' href='include/sysdocs.css' type='text/css'>
+    <link rel='stylesheet' href='include/widjit.css' type='text/css'>
+    <link rel="icon" href="images/nook.png" type="image/x-icon" />
+	<script type='text/javascript' src='include/sysdocs.js'></script>
+	<script type='text/javascript' src='include/widjits.js'></script>
+</head>
+<body>
+    <div class='main'>
+	    <script type='text/javascript'>makePageHead(nookSys, null, homeLinks.index, false);</script>
+		<div id='contentDiv' class='content'>
+			<script type='text/javascript'>
+				setContentHeight();
+			</script>
+			<div class='widjit' tabindex='10' autofocus onclick='location.href="nsetup.html";' onkeyup='javascript: handleKeyUp(this);'>
+				<p id='config' name='toc' class='widjitTitle'><img src='images/nook.png' alt='Nook Logo' class='logo'>Configuration</p>
+				<p class='widjitContent'>
+					Details for configuring a new or recently reset Nook.
+				</p>
+				<p id='setup' class='widjitContent'>
+				    Contents:
+					<script type='text/javascript'>
+						loadTocFromPage('setup', 'nsetup.html');
+					</script>
+				</p>
+			</div>
+			<div class='widjit' tabindex='20' onclick='location.href="nshelves.html";' onkeyup='javascript: handleKeyUp(this);'>
+				<p id='shelf' name='toc' class='widjitTitle'><img src='images/shelf.png' alt='Shelf Logo' class='logo'>Shelf Definitions</p>
+				<p class='widjitContent'>
+				    List of Nook shelves and their contents.
+				</p>
+				<table class='widjitContent'>
+                    <tr>
+                        <td class='widjitContents'>Contents:</td>
+                        <td id='shelves'>
+                            <script type='text/javascript'>
+                                loadTocFromPage('shelves', 'nshelves.html');
+                            </script>
+                        </td>
+                    </tr>
+                </table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

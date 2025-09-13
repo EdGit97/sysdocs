@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel=stylesheet href='include/sysdocs.css' type='text/css'>
+    <link rel="icon" href="images/win11.png" type="image/x-icon" />
+	<script type='text/javascript' src='include/sysdocs.js'></script>
+</head>
+<body>
+    <div class='main'>
+	    <script type='text/javascript'>makePageHead(winSys, 'Thunderbird Installation', homeLinks.both, true);</script>
+		<div id='contentDiv' class='content'>
+			<script type='text/javascript'>
+				setContentHeight();
+			</script>
+            <h2 id='glossary' name='toc'><img src='images/glossary.png' alt='Glossary Icon' class='logo'>Glossary</h2>
+			<ul class='instructions'>
+                <li>
+                    Folder Pane - The left side panel that displays the mail tree structure.
+                </li>
+                <li>
+                    Message Pane - Window to preview the currently selected message.
+                </li>
+                <li>
+                    Spaces Toolbar/Menu - The toolbar at the extreme left of the Thunderbird window. 
+                    Contains icons for: Inbox, Address Book, Calendar, Tasks, Chat and Settings.
+                    The toolbar is usually hidden and accessed via the Spaces Menu at the extreme
+                    upper left of the window.
+                </li>
+                <li>
+                    Today Pane - The right side panel that displays the Calendar and 
+                    upcoming events.  Will become visisble once a calendar is created.
+                </li>
+			</ul>
+            <h2 id='links' name='toc'><img src='images/links.png' alt='Glossary Icon' class='logo'>Links</h2>
+            <ul class='instructions'>
+                <li><a href='https://www.thunderbird.net/en-US/' target='_blank'>Home Page</a></li>
+                <li><a href='https://kb.mozillazine.org/Other_sources_of_Thunderbird_information' target='_blank'>Knowledge Base</a></li>
+                <li><a href='https://support.mozilla.org/en-US/kb/keyboard-shortcuts-thunderbird' target='_blank'>Shortcuts</a></li>
+            </ul>
+            <h2 id='install' name='toc'><img src='images/tblogo.png' alt='Thunderbird Logo' class='logo'>Installation</h2>
+			<ol class='instructions' type='I'>
+                <li>
+                    Install Thunderbird:
+                    <ol class='instructions' type='A'>
+                        <li>
+                             Download <a href='https://www.thunderbird.net/en-US/' target='_blank'>Thunderbird</a> 
+                             and place in \Src\setups
+                        </li>
+                        <li>
+                            Install Thunderbird from C:\Src\setups\Thunderbird Setup 128.3.2esr.exe:
+                            <ol class='instructions' type='1'>
+                                <li>Will be installed at C:\Program Files\Mozilla Thunderbird</li>
+                                <li>The data store is typically installed at C:\Users\&lt;username&gt;\AppRata\Roaming\Thunderbird</li>
+                                <li>Email address: swanecke@earthlink.net</li>
+                                <li>Available configuration: POP3</li>
+                                <li>Done</li>
+                                <li>Finish</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    Install the ImportExportToolsNG add-on:
+                    <ol class='instructions' type='A'>
+                        <li>Hamburger Menu -&gt; Add-ons and Themes</li>
+                        <li>Extensions</li>
+                        <li>Search for ImportExportToolsNG</li>
+                        <li>+ Add to Thunderbird</li>
+                        <li>Close Search and Add-ons Manager tabs.</li>
+                        <li>ImportExport will appear on the title bar.</li>
+                        <li>ImportExport -&gt; Options</li>
+                        <li>Backup scheduling tab</li>
+                        <li>&check; Enable</li>
+                        <li>Frequency: 3 days</li>
+                        <li>Destination: C:\Backup\thunderbird</li>
+                        <li>Save: Always all files</li>
+                        <li>Backup content: All profile files</li>
+                        <li>OK</li>
+                        <li>Close the Add-ons Manager tab.</li>
+                    </ol>
+                </li>
+                <li>
+                    Use the following steps to restore an existing Thunderbird profile backup, 
+                    otherwise proceed to the next step to continue the manual setup process.
+                    <ol class='instructions' type='A'>
+                        <li>Tools -&gt; ImportExportToolsNG -&gt; Import Profile</li>
+                        <li>Path of the profile to import: C:\Backup\thunderbird\&lt;Most recent profile directory&gt;</li>
+                        <li>Name of profile to import: default-ed-hp2</li>
+                        <li>Next</li>
+                        <li>Start Import</li>
+                        <li>When the message "The import was successful!", click Next</li>
+                        <li>Run the Profile Manager</li>
+                        <li>Thunderbird - Choose User Profile default-ed-hp2, click Start Thunderbird</li>
+                        <li>Help -&gt; Troubleshooting Information...</li>
+                        <li>Application Basics: Profiles: click about:profiles</li>
+                        <li>Remove all profiles except: default-ed-hp2 and default.</li>
+                        <li>Close Troubleshooting Information and About Profiles tabs.</li>
+                        <li>Close Thunderbird</li>
+                        <li>C:\Program Files\Mozilla Thunderbird&gt;thunderbird -P</li>
+                        <li>Select default-ed-hp2</li>
+                        <li>&check; Use the selected profile without asking at startup</li>
+                        <li>Start Thunderbird</li>
+                        <li>
+                            At this point, the Thunderbird configuration should be completely
+                            restored.  To check the configuration, continue with the next steps, 
+                            otherwise this process can be considered complete.
+                        </li>
+                    </ol>
+                </li>
+                <li>Turn on the Menu Bar: Hamburger Menu -&gt; View -&gt; Toolbars -&gt; &check; Menu Bar</li>
+                <li>
+                    Hide the Spaces Toolbar: View -&gt; Toolbars -&gt; &#x1F6C7; Spaces Toolbar
+                </li>
+                <li>
+                    Folder Pane -&gt; ... (Control, top right) -&gt; 
+                    <ol class='instructions' type='A'>
+                        <li>Folder Modes -&gt; Check only "All Folders", all others unchecked.</li>
+                        <li>&check; Show "Get Messages"</li>
+                        <li>&check; Show "New Messages"</li>
+                        <li>&check; Hide Local Folders</li>
+                    </ol>
+                </li>
+                <li>
+                    Rename the default profile:
+                    <ol class='instructions' type='A'>
+                        <li>Help -&gt; Troublshooting Information</li>
+                        <li>Application Basics: Profiles: about:profiles</li>
+                        <li>Profile: default-esr, click Rename</li>
+                        <li>Rename profile default-esr: default-ed-hp2</li>
+                        <li>OK</li>
+                        <li>Click Restart normally...</li>
+                    </ol>
+                </li>
+                <li>
+                    Email Setup:
+                    <ol class='instructions' type='A'>
+                        <li>
+                            Setup email accounts for swanecke@earthlink.net and ed353@earthlink.net:
+                            <ol class='instructions' type='1'>
+                                <li>Hamburger -&gt; New Account -&gt; Email</li>
+                                <li>Your full Name: Me</li>
+                                <li>Email address: &lt;One of the above&gt;</li>
+                                <li>Password: &lt;Associated password&gt;</li>
+                                <li>&check; Remember password</li>
+                                <li>Continue</li>
+                                <li>POP3</li>
+                                <li>Done</li>
+                                <li>Finish</li>
+                            </ol>
+                        </li>
+                        <li>
+                            Configure email operations<br>
+                            Tools -&gt; Settings:
+                            <ol class='instructions' type='1'>
+                                <li>
+                                    General:
+                                    <ol class='instructions' type='a'>
+                                        <li>
+                                            General:<br>
+                                            &#x1F6C7; When Thunderbird launches, show the Start Page in the message area
+                                        </li>
+                                        <li>
+                                            Incoming Mails:
+                                            <ol class='instructions' type='i'>
+                                                <li>&check; Show an alert</li>
+                                                <li>&#x1F6C7; Use the system notification</li>
+                                                <li>&#x1F6C7; Show a tray icon for unread messages</li>
+                                                <li>&check; Play a sound: Use the following sound file: file:///C:/Src/CellPhone/Sounds/telegraph.wav</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            Reading &amp; Display:
+                                            <ol class='instructions' type='i'>
+                                                <li>Open messages in: A new message window</li>
+                                                <li>&check; Close message window/tab on move or delete</li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    Composition:
+                                    <ol class='instructions' type='a'>
+                                        <li>HTML Style: &#x1F6C7; Use Paragraph format instead of Body Text by default</li>
+                                        <li>Sending Format: Both HTML and Plain Text</li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    Privacy & Security -&gt; Junk:
+                                    <ol class='instructions' type='a'>
+                                        <li>&check; When messages are marked as junk:</li>
+                                        <li>&check; Move them to the account’s "Junk" folder</li>
+                                        <li>Mark messages as read: &check; When manually marked as junk</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            Tools -&gt; Account Settings:
+                            <ol class='instructions' type='1'>
+                                <li>Server Settings</li>
+                                <li>&#x1F6C7; Leave messages on server</li>
+                            </ol>
+                        </li>
+                        <li>Turn off Message Pane: View -&gt; Layout -&gt; &#x1F6C7; Message Pane</li>
+                        <li>
+                            Optional: Import emails from another client.  Using an export or backup
+                            from a different email client:
+                            <ol class='instructions' type='1'>
+                                <li>Manually generate all subfolders below Inbox.</li>
+                                <li>Drag and drop the EML files into the matching folder.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    Calendar Setup:
+                    <ol class='instructions' type='A'>
+                        <li>
+                            Setup calendar account for ed9707@gmail.com:                    
+                            <ol class='instructions' type='1'>
+                                <li>Spaces Menu -&gt; Calendar</li>
+                                <li>New Calendar...</li>
+                                <li>On the Network</li>
+                                <li>Next</li>
+                                <li>User Name: ed9707@gmail.com</li>
+                                <li>Location: gmail.com</li>
+                                <li>Find Calendars</li>
+                                <li>Sign-in to Google as ed9707@gmail.com</li>
+                                <li>
+                                    Please select calendars you would like subscribe to:
+                                    <ol class='instructions' type='a'>
+                                        <li>ed9707@gmail.com</li>
+                                        <li>Holidays in United States</li>
+                                        <li>Contacts</li>
+                                    </ol>
+                                </li>
+                                <li>Subscribe</li>
+                            </ol>
+                        </li>
+                        <li>
+                            Set event colors and default calendar:
+                            <ol class='instructions' type='1'>
+                                <li>Select Calendar in the Spaces Menu</li>
+                                <li>
+                                    Holidays in the United States:
+                                    <ol class='instructions' type='a'>
+                                        <li>... -&gt; Properties</li>
+                                        <li>Color: Hue: 141, Sat: 225, Lum: 195, Red: 163, Green: 205, Blue: 252</li>
+                                        <li>OK</li>
+                                        <li>OK</li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    ed9707@gmail.com:
+                                    <ol class='instructions' type='a'>
+                                        <li>... -&gt; Properties</li>
+                                        <li>Color: Hue: 160, Sat: 240, Lum: 120, Red: 0, Green: 0, Blue: 256</li>
+                                        <li>OK</li>
+                                        <li>OK</li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    Contacts:
+                                    <ol class='instructions' type='a'>
+                                        <li>... -&gt; Properties</li>
+                                        <li>Color: Hue: 120, Sat: 80, Lum: 90, Red: 64, Green: 128, Blue: 128</li>
+                                        <li>OK</li>
+                                        <li>OK</li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    When finished, select ed9707@gmail.com in the Calendars list located 
+                                    at the lower left.  This will cause the ed9707@gmail.com calendar to
+                                    be the default calendar when creating new events.
+                                </li>
+                                <li>Close the Calendar tab.</li>
+                            </ol>
+                        </li>
+                        <li>View -&gt; Today Pane -&gt; &check; Show Today Pane</li>
+                        <li>Turn on calendar: View -&gt; Today Pane -&gt; &check; Show Mini-Month</li>
+                        <li>
+                            Add notifications for events:
+                            <ol class='instructions' type='1'>
+                                <li>Tools -&gt; Settings</li>
+                                <li>
+                                    Calendar: Reminders: Play a sound:<br>
+                                    &check; Use the following sound file: file:///C:/Src/CellPhone/Sounds/sonar.wav
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    Install themes:
+                    <ol class='instructions' type='A'>
+                        <li>Tools -> Add-ons and themes</li>
+                        <li>Themes</li>
+                        <li>
+                            Download:
+                            <ol class='instructions' type='1'>
+                                <li>Internet Explorer Blue Theme - Enabled</li>
+                                <li>Apple Look Stainless Steel</li>
+                            </ol>
+                        </li>
+                        <li>Close the Add-ons Manager tab.</li>
+                    </ol>
+                </li>
+                <li>
+                    Set Thunderbird to be the default email application:
+                    <ol class='instructions' type='A'>
+                        <li>Windows Settings -&gt; Apps -&gt; Default apps</li>
+                        <li>Thunderbird</li>
+                        <li>Set Thunderbird as the default for all listed items.</li>
+                    </ol>
+                </li>
+			</ol>
+		</div>
+	</div>
+</body>
+</html>

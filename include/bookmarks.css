@@ -1,0 +1,39 @@
+/* Stylesheet for the Firefox bookmarks page */
+li.sublist {
+    margin-top: 0.5em;
+}
+
+ul.bmlvl0 {
+    list-style-type: disc;
+}
+
+ul.bmlvl1 {
+    list-style-type: circle;
+    overflow-x: hidden;
+}
+
+ul.bmlvl2 {
+    list-style-type: square;
+}
+
+ul.bmlvl3 {
+    list-style-type: '\25A1';
+}
+
+ul.bmlvl4 {
+    list-style-type: '\25C2';
+}
+
+p.bookmark {
+    font-family: SysDocs;
+	font-size: 11pt;
+	text-align: left;
+}
+
+label.bookmark {
+    display: inline-block;
+    font-family: SysDocsBold;
+	margin-right: 0.5em;
+	text-align: right;
+	width: 3em;
+}

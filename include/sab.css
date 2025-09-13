@@ -1,0 +1,24 @@
+/* Stylesheet for the StartAllBack page */
+p.shortcuts {
+    font-family: SysDocs;
+	font-size: 12pt;
+	padding-left: 5%;
+	text-align: left;
+}
+
+span.shortcuts {
+    font-family: SysDocs;
+	font-weight: 600;
+	font-size: 12pt;
+	margin-left: -5%;
+	text-decoration: underline;
+}
+
+label.shortcuts {
+    display: inline-block;
+    font-family: SysDocs;
+	font-weight: 600;
+	margin-right: 0.5em;
+	text-align: right;
+	width: 7em;
+}

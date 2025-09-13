@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FreeFileSync XmlType="BATCH" XmlFormat="23">
+    <Notes>Full backup to local removable media.</Notes>
+    <Compare>
+        <Variant>Content</Variant>
+        <Symlinks>Exclude</Symlinks>
+        <IgnoreTimeShift/>
+    </Compare>
+    <Synchronize>
+        <Differences LeftOnly="right" LeftNewer="right" RightNewer="right" RightOnly="right"/>
+        <DeletionPolicy>RecycleBin</DeletionPolicy>
+        <VersioningFolder Style="Replace"/>
+    </Synchronize>
+    <Filter>
+        <Include>
+            <Item>*</Item>
+        </Include>
+        <Exclude>
+            <Item>\System Volume Information\</Item>
+            <Item>\$Recycle.Bin\</Item>
+            <Item>\RECYCLE?\</Item>
+            <Item>\Recovery\</Item>
+            <Item>*\thumbs.db</Item>
+            <Item>*\databases\*</Item>
+            <Item>*\.metadata\.lock</Item>
+            <item>eclipse\configuration\org.eclipse.equinox.app\*</item>
+            <item>eclipse\configuration\org.eclipse.core.runtime\*</item>
+        </Exclude>
+        <SizeMin Unit="None">0</SizeMin>
+        <SizeMax Unit="None">0</SizeMax>
+        <TimeSpan Type="None">0</TimeSpan>
+    </Filter>
+    <FolderPairs>
+        <Pair>
+            <Left>C:\Accounting</Left>
+            <Right>[BKUP]\Accounting</Right>
+        </Pair>
+        <Pair>
+            <Left>C:\Backup</Left>
+            <Right>[BKUP]\Backup</Right>
+        </Pair>
+        <Pair>
+            <Left>C:\Users\swane\Documents</Left>
+            <Right>[BKUP]\Documents</Right>
+        </Pair>
+        <Pair>
+            <Left>C:\Legacy</Left>
+            <Right>[BKUP]\Legacy</Right>
+        </Pair>
+        <Pair>
+            <Left>C:\Users\swane\Music</Left>
+            <Right>[BKUP]\Music</Right>
+        </Pair>
+        <Pair>
+            <Left>C:\Users\swane\Pictures</Left>
+            <Right>[BKUP]\Pictures</Right>
+        </Pair>
+        <Pair>
+            <Left>C:\Src</Left>
+            <Right>[BKUP]\Src</Right>
+        </Pair>
+        <Pair>
+            <Left>C:\Users\swane\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Projects</Left>
+            <Right>gdrive:\ed9707@gmail.com\Ed-HP2\Toolbars\Projects</Right>
+        </Pair>
+        <Pair>
+            <Left>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Legacy</Left>
+            <Right>gdrive:\ed9707@gmail.com\Ed-HP2\Toolbars\Legacy</Right>
+        </Pair>
+        <Pair>
+            <Left>C:\webdevenv</Left>
+            <Right>[BKUP]\webdevenv</Right>
+        </Pair>
+    </FolderPairs>
+    <Errors Ignore="true" Retry="3" Delay="5"/>
+    <PostSyncCommand Condition="Completion"/>
+    <LogFolder>C:\Src\sysdocs\backup\logs</LogFolder>
+    <EmailNotification Condition="Always"/>
+    <GridViewType>Difference</GridViewType>
+    <Batch>
+        <ProgressDialog Minimized="false" AutoClose="true"/>
+        <ErrorDialog>Show</ErrorDialog>
+        <PostSyncAction>None</PostSyncAction>
+    </Batch>
+</FreeFileSync>

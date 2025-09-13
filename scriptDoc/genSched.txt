@@ -1,0 +1,55 @@
+Help on module genSched:
+
+NAME
+    genSched - Generate the FreeFileSync jobs and load them into the Windows Scheduler.
+
+DESCRIPTION
+    To run: C>py genSched.py
+    To generate pydoc: py -m pydoc genSched > ..\scriptDoc\genSched.txt
+
+FUNCTIONS
+    generateSched() -> list
+        Generate the scheduler commands.
+
+        Returns:
+            list: List of commands to run that will add the jobs to the schedule.
+
+    loadSched(tasks: list) -> None
+        Load jobs into the scheduler.
+
+        Args:
+            The list of commands to run to load the schedule with the backup jobs.
+
+    main() -> None
+        Main method
+
+DATA
+    BACKUP_ROOT = r'C:\Src\sysdocs\backup\'
+    FFS_PATH = r'C:\Program Files\FreeFileSync\FreeFileSync.exe'
+    Final = typing.Final
+        Special typing construct to indicate final names to type checkers.
+
+        A final name cannot be re-assigned or overridden in a subclass.
+
+        For example::
+
+            MAX_SIZE: Final = 9000
+            MAX_SIZE += 1  # Error reported by type checker
+
+            class Connection:
+                TIMEOUT: Final[int] = 10
+
+            class FastConnector(Connection):
+                TIMEOUT = 1  # Error reported by type checker
+
+        There is no runtime checking of these properties.
+
+    JOB_PARMS = ({'jobNm': 'Accounting', 'jobTime': '19:00', 'taskNm': 'ac...
+    PARM_FIELDS = ['taskNm', 'jobNm', 'jobTime']
+    SCHED_CMD = 'schtasks /create /sc DAILY /tn ffsb\\%taskNm% /tr...cs\\b...
+    __annotations__ = {'BACKUP_ROOT': typing.Final[str], 'FFS_PATH': typin...
+
+FILE
+    c:\src\sysdocs\generate\gensched.py
+
+

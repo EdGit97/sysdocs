@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel=stylesheet href='include/sysdocs.css' type='text/css'>
+    <link rel="icon" href="images/win11.png" type="image/x-icon" />
+	<script type='text/javascript' src='include/sysdocs.js'></script>
+</head>
+<body>
+    <div class='main'>
+	    <script type='text/javascript'>makePageHead(winSys, 'eM Client Installation', homeLinks.both, true);</script>
+		<div id='contentDiv' class='content'>
+			<script type='text/javascript'>
+				setContentHeight();
+			</script>
+			<ol class='instructions'>
+				<li>
+				    Install eM Client from C:\Src\setups\emclient-v9.2.2157.msi<br>
+				    License name: Ed Swaneck<br>
+					Activation key: ca0b3c3d-a481-4173-be34-9740cbda0710
+				</li>
+				<li>
+				    Terms:
+					<ul class='instructions'>
+					    <li>
+						    View Bar - This refers to the left side panel
+							that displays the mail and note tree structure
+							and the calendar summary.
+						</li>
+					    <li>
+						    Sidebar - This refers to the right side panel
+							that displays the Agenda, Chat, etc.  
+						</li>
+					</ul>
+				</li>
+				<li>
+					Menu -&gt; Settings -&gt; Appearance
+					<ol class='instructions' type='a'>
+						<li>
+							Layout
+							<ol class='instructions' type='i'>
+								<li>Layout - Message panel off</li>
+								<li>Sidebar - Expanded</li>
+							</ol>
+						</li>
+						<li>
+							Toolbars
+							<ol class='instructions' type='i'>
+								<li>Main toolbar alignment: Left</li>
+								<li>Other toolbar alignment: Left</li>
+							</ol>
+						</li>
+						<li>Themes - Mystic or Arctic</li>
+						<li>Stop/Start eM Client</li>
+					</ol>
+				</li>
+				<li>
+					Menu -&gt; Settings -&gt; Mail -&gt; Read
+					<ol class='instructions' type='a'>
+						<li>Read: Check "Close original message window after deleting the message"</li>
+						<li>
+							Message List
+							<ol class='instructions' type='i'>
+								<li>Uncheck: Show messages in groups</li>
+								<li>Check: Show full dates</li>
+							</ol>
+						</li>
+					</ol>
+				</li>
+				<li>
+				    Setup Mail Columns Configuration
+					<ol class='instructions' type='a'>
+					    <li>Right-click the mail list header -&gt; Columns Configuration...</li>
+					    <li>
+						    Display the following columns:
+							<ol class='instructions' type='i'>
+								<li>From</li>
+								<li>Subject</li>
+								<li>Received</li>
+								<li>Priority</li>
+								<li>Attachment</li>
+							    <li>Encrypted</li>
+							    <li>Signed</li>
+							</ol>
+						</li>
+					    <li>OK</li>
+					    <li>
+						    Right-click the mail list header -&gt; Apply Column Configuration to Other Folder(s)...
+							<ol class='instructions' type='i'>
+								<li>Click Inbox</li>
+								<li>Scroll to the bottom of the list</li>
+							    <li>Hold the Shift key down and click on the last item.</li>
+								<li>OK</li>
+							    <li>
+								    Do you want to apply the current column configuration 
+									to the" Outbox" folder?
+									<ul class='instructions'>
+									    <li>Check - Do the same for other folders during this operation.</li>
+									    <li>Yes</li>
+                                    </ul>
+								</li>
+							    <li>Current column cofiguration has been applied to XX folders. - Click Ok</li>
+							</ol>
+						</li>
+					</ol>
+				</li>
+				<li>
+					Settings -> Calendar
+					<ol class='instructions' type='a'>
+						<li>
+							 General
+							<ol class='instructions' type='i'>
+								<li>Work Week: MTWTF</li>
+								<li>First day of week: Sunday</li>
+							</ol>
+						</li>
+						<li>Weather: Uncheck "Enable weather"</li>
+					</ol>
+				</li>
+				<li>Settings -> Notes</li>
+				<li>
+					Settings -&gt; General -&gt; Backup
+					<ol class='instructions' type='a'>
+						<li>Target Directory: C:\Backup\emClient</li>
+						<li>Enable periodic backup: checked</li>
+						<li>Frequency: 3 days</li>
+						<li>Preserve last: 2 backups</li>
+					</ol>
+				</li>
+				<li>
+					Menu -&gt Accounts...
+					<ol class='instructions' type='a'>
+						<li>Mail -&gt; Other...</li>
+						<li>Identity: swanecke@earthlink.net</li>
+						<li>
+							Incoming server:
+							<ol class='instructions' type='i'>
+								<li>Server Type: POP3</li>
+								<li>Incoming server: pop.earthlink.net</li>
+								<li>Password</li>
+							</ol>
+						</li>
+						<li>Outgoing server: smtpauth.earthlink.net</li>
+						<li>If the SMTP test fails, click the Fix button.</li>
+						<li>Continue without encryption.</li>
+						<li>Account folder locations: Store messages in Local Folders</li>
+					</ol>
+				</li>
+				<li>Repeat the previous step with account ed353@earthlink.net</li>
+				<li>
+					Setup the view bar:
+					<ol class='instructions' type='a'>
+						<li>Click the ... </li>
+						<li>Navigation options...</li>
+						<li>
+							Items to show:
+							<ol class='instructions' type='i'>
+								<li>Mail</li>
+								<li>Calendar</li>
+								<li>Notes</li>
+								<li>Tasks</li>
+							</ol>
+						</li>
+					</ol>
+				</li>
+				<li>
+				    Sidebar: 
+					<ol class='instructions' type='a'>
+					    <li>Select Agenda (the checkmark)</li>
+					    <li>
+						    Hover over the "Agenda" title and click the gear -&gt; 
+							Show Upcoming Events -&gt; Click Week
+						</li>
+					    <li>
+						    Hover over the "Agenda" title and click the gear -&gt; 
+							Show Upcoming Birthdays -&gt; Click Week
+						</li>
+					</ol>
+				</li>
+				<li>Right-click the toolbar -&gt; Customize.  Items to show: move Delete to be immediately after Forward</li>
+				<li>
+					Settings -&gt; General -&gt; Notifications
+					<ol class='instructions' type='a'>
+						<li>Incoming mail: C:\Src\CellPhone\Sounds\telegraph.mp3</li>
+						<li>Incoming file: C:\Src\CellPhone\Sounds\telegraph.mp3</li>
+						<li>Uncheck "Disable notifications when fullscreen application is detected"</li>
+						<li>
+							Disable the following notifications when the main application window is active:
+							<ol class='instructions' type='i'>
+								<li>Sound: Uncheck</li>
+								<li>Popup: Check</li>
+							</ol>
+						</li>
+						<li>Uncheck "Use system notifications"</li>
+					</ol>
+				</li>
+				<li>Settings -&gt; General -&gt; Shortcuts -&gt; Send Mail -&gt; Send: Alt+s</li>
+				<li>
+					Import Outlook data:
+					<ol class='instructions' type='a'>
+						<li>Menu -&gt; File -&gt; Import</li>
+						<li>Import from: Files: Outlook personal storage (.pst)</li>
+						<li>Import selected PST data file: Outlook.pst</li>
+						<li>
+							Select folders you want to import.  Select the following folders:
+							<ol class='instructions' type='i'>
+								<li>Archive</li>
+								<li>Notes</li>
+								<li>Calendar</li>
+								<li>Inbox</li>
+							</ol>
+						</li>
+						<li>Import data to default root folders of the selected account: Local Folders</li>
+					</ol>
+				</li>
+				<li>Import Notes.  Cannot import.  Export the notes from Outlook to CSV and copy manually.</li>
+			</ol>
+		</div>
+	</div>
+</body>
+</html>

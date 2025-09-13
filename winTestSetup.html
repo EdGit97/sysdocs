@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel=stylesheet href='include/sysdocs.css' type='text/css'>
+    <link rel="icon" href="images/win10.png" type="image/x-icon" />
+	<script type='text/javascript' src='include/sysdocs.js'></script>
+</head>
+<body>
+    <div class='main'>
+	    <script type='text/javascript'>makePageHead(testSys, 'Configuration', homeLinks.both, true);</script>
+		<div id='contentDiv' class='content'>
+			<script type='text/javascript'>
+				setContentHeight();
+			</script>
+            <p class='instructions'>
+                Setup a Windows test machine.
+            </p>
+			<ol class='instructions'>
+                <li>
+                    Settings:
+					<ol class='instructions' type='a'>
+                        <li>Account Name: Ed Test</li>
+                        <li>Account Type: Administrator</li>
+                        <li>Sign-in Options: Account Password - Hint: dday</li>
+                    </ol>
+                </li>
+                <li>
+                    C&gt;mkdir C:\work<br>
+                    Setup sharing:
+					<ol class='instructions' type='a'>
+                        <li>Properties</li>
+                        <li>Sharing tab</li>
+                        <li>Share...</li>
+                        <li>Ed Test - Only user</li>
+                        <li>Share</li>
+                        <li>Done</li>
+                        <li>Close</li>
+                    </ol>
+                </li>
+                <li>C&gt;mkdir C:\Src\WEB-INF</li>
+                <li>C&gt;mkdir C:\Src\setups</li>
+                <li>C&gt;mkdir C:\Src\sounds</li>
+                <li>
+                    Using the \\Ed-Test\work shared directory, copy the following files from Ed-HP2 to Ed-Test.
+                    <table style='border-collapse: collapse;'>
+                        <tr><th class='testFiles'>Ed-HP2</th><th class='testFiles'>Ed-Test</th></tr>
+                        <tr><td class='testFiles'>C:\Src\setups\jdk-21_windows-x64_bin.msi</td><td class='testFiles'>C:\Src\setups</td></tr>
+                        <tr><td class='testFiles'>C:\Src\Pictures\LockScreen\c5-2.jpg</td><td class='testFiles'>C:\Users\Ed Test\Pictures</td></tr>
+                        <tr><td class='testFiles'>C:\Src\CellPhone\Sounds\beepbeep.wav</td><td class='testFiles'>C:\Src\sounds</td></tr>
+                        <tr><td class='testFiles'>C:\Src\CellPhone\Sounds\cartoon_drop.wav</td><td class='testFiles'>C:\Src\sounds</td></tr>
+                        <tr>
+                            <td class='testFiles'>
+                                C:\Src\setups\Cabriolet Light.zip:<br>
+                                Cabriolet Light\Aternative files\John Vargas Beltr├ín - Cabriolet Light.ttf
+                            </td>
+                            <td class='testFiles'>
+                                C:\Windows\Fonts
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class='testFiles'>
+                                C:\Src\setups\open-sans.zip:<br>
+                                OpenSans-Bold.ttf<br>
+                                OpenSans-BoldItalic.ttf<br>
+                                OpenSans-ExtraBold.ttf<br>
+                                OpenSans-ExtraBoldItalic.ttf<br>
+                                OpenSans-Italic.ttf<br>
+                                OpenSans-Light.ttf<br>
+                                OpenSans-LightItalic.ttf<br>
+                                OpenSans-Regular.ttf<br>
+                                OpenSans-Semibold.ttf<br>
+                                OpenSans-SemiboldItalic.ttf                                
+                            </td>
+                            <td class='testFiles'>
+                                C:\Windows\Fonts
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    Setup Lock Screen:
+					<ol class='instructions' type='a'>
+                        <li>Right-click on the Desktop -&gt; Personalize</li>
+                        <li>Lock screen</li>
+                        <li>Browse</li>
+                        <li>C:\Users\Ed Test\Pictures\c5-2.jpg</li>
+                        <li>Choose picture</li>
+                    </ol>
+                </li>
+                <li>
+                   Setup a printer:
+					<ol class='instructions' type='a'>
+                        <li>Setup</li>
+                        <li>Devices</li>
+                        <li>Printers & scanners</li>
+                        <li>Add a printer or scanner</li>
+                        <li>NPI0D9C0E (HP LaserJet Professional P1102w)</li>
+                        <li>Add device</li>
+                    </ol>
+                </li>
+                <li>
+                    Download and install Firefox:
+					<ol class='instructions' type='a'>
+                        <li>C&gt;curl -o C:\Src\setups\ffInstall.exe "https://download.mozilla.org/?product=firefox-latest&os=win64"</li>
+                        <li>C&gt;cd \Src\setups</li>
+                        <li>C&gt;ffInstall</li>
+                    </ol>
+                </li>
+                <li>Install Java JDK 21 using C:\Src\setups\jdk-21_windows-x64_bin.msi</li>
+                <li>Download and install <a href='https://www.libreoffice.org/' target='_blank'>Libre OpenOffice</a>.</li>
+                <li>
+                    Download and install <a href='https://www.thunderbird.net/en-US/' target='_blank'>Thunderbird</a>.
+					<ol class='instructions' type='a'>
+                        <li>
+                            Account Setup:
+                            <ol class='instructions' type='i'>
+                                <li>Full Name: Ed Test</li>
+                                <li>Email Address: ed9707@gmail.com</li>
+                                <li>Select IMAP</li>
+                                <li>Done</li>
+                            </ol>
+                        </li>
+                        <li>Turn on the Menu Bar: Hamburger Icon -&gt; View -&gt; Toolbars -&gt; &check; Menu Bar</li>
+                        <li>Shut off the email preview pane - View -&gt; Layout -&gt; &#x1F6C7; Message Pane.</li>
+                        <li>
+                            Hide the Spaces Toolbar: View -&gt; Toolbars -&gt; &#x1F6C7; Spaces Toolbar
+                        </li>
+                        <li>
+                            Activate the Home calendar:
+                            <ol class='instructions' type='i'>
+                                <li>Spaces Menu -&gt; Calendar</li>
+                                <li>Calendars -&gt; Home, click Enable</li>
+                                <li>Close Calendar tab</li>
+                            </ol>
+                        </li>
+                        <li>View -&gt; Today Pane -&gt; &check; Show Today Pane</li>
+                        <li>View -&gt; Today Pane -&gt; Show Mini-Day</li>
+                        <li>
+                            Configure Account:
+                            <ol class='instructions' type='i'>
+                                <li>Tools -&gt; Account Settings</li>
+                                <li>Server Settings</li>
+                                <li>
+                                    When I delete a message: 
+                                    <ul class='instructions'>
+                                        <li>&check; Move it to this folder</li>
+                                        <li>[Gmail] &gt; Trash</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            Configure email and calendar operations<br>
+                            Tools -&gt; Settings:
+                            <ol class='instructions' type='i'>
+                                <li>
+                                    General:
+                                    <ul class='instructions'>
+                                        <li>&#x1F6C7; When Thunderbird launches, show the Start Page in the message area</li>
+                                        <li>
+                                            Incoming Mails:
+                                            <ul class='instructions' type='circle'>
+                                                <li>&check; Show an alert</li>
+                                                <li>&#x1F6C7; Use the system notification</li>
+                                                <li>&#x1F6C7; Show a tray icon for unread messages</li>
+                                                <li>&check; Play a sound: Use the following sound file: file:///C:/Src/sounds/beepbeep.wav</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            Reading &amp; Display:
+                                            <ul class='instructions' type='circle'>
+                                                <li>Open messages in: A new message window</li>
+                                                <li>&check; Close message window/tab on move or delete</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Composition:
+                                    <ul class='instructions'>
+                                        <li>HTML Style: &#x1F6C7; Use Paragraph format instead of Body Text by default</li>
+                                        <li>Sending Format: Both HTML and Plain Text</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Calendar: Reminders: When Reminder is due<br>
+                                    &check; Play a sound: Use the following sound file: file:///C:/Src/sounds/cartoon_drop.wav
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            When using an Internet Message Access Protocol (IMAP) connection, "duplicate"
+                            folders, such as: Drafts, Sent and Trash, may appear in the Folder Bar. To
+                            remove these from the folder list:
+                            <ol class='instructions' type='i'>
+                                <li>Right-click on the account name entry at the top of the folder tree.</li>
+                                <li>Subscribe...</li>
+                                <li>
+                                    Select the folders to subscribe to:
+                                    <ul class='instructions'>
+                                        <li>&check; INBOX</li>
+                                        <li>&#x1F6C7; Drafts, Personal, Receipts, Sent, Trash and Work</li>
+                                        <li>
+                                            [Gmail]: &check; Drafts, Sent Mail and Trash.  All others 
+                                            under [Gmail], unchecked.
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>OK</li>
+                            </ol>
+                        </li>
+                        <li>
+                            Install themes:
+                            <ol class='instructions' type='A'>
+                                <li>Tools -> Add-ons and themes</li>
+                                <li>Themes</li>
+                                <li>Download: Sky Clouds</li>
+                                <li>Close the Add-ons Manager tab.</li>
+                            </ol>
+                        </li>
+                        <li>
+                            Make Thunderbird the default mail application:
+                            <ol class='instructions' type='i'>
+                                <li>Start -&gt; Settings</li>
+                                <li>Apps</li>
+                                <li>Default apps</li>
+                                <li>Email -&gt; Thunderbird</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    Start Menu Setup:
+					<ol class='instructions' type='a'>
+                        <li>Toolbars &gt; Desktop</li>
+                        <li>Search &gt; Hidden</li>
+                        <li>News and Interests &gt; Turn off</li>
+                        <li>Show Cortana button - Uncheck</li>
+                        <li>Show Task View button - Uncheck</li>
+                        <li>Lock the taskbar - Checked</li>
+                        <li>
+                            Taskbar Settings:
+                            <ol class='instructions' type='i'>
+                                <li>Lock the taskbar - On</li>
+                                <li>Automatically hide the taskbar in desktop mode - On</li>
+                                <li>
+                                    Notification area -&gt; Select which icons appear on the taskbar.
+                                    Turn the following icons on, all other are off.
+                                    <ul class='instructions'>
+                                        <li>Power</li>
+                                        <li>Network</li>
+                                        <li>Volume</li>
+                                        <li>Windows Update Status</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            Start Settings:
+                            <ol class='instructions' type='i'>
+                                <li>Show more tiles on Start - On</li>
+                                <li>Show app list in Start menu - On</li>
+                            </ol>
+                        </li>
+                        <li>
+                            Pin the following to the Taskbar:
+                            <ol class='instructions' type='i'>
+                                <li>This PC</li>
+                                <li>Thunderbird</li>
+                                <li>Microsoft Edge</li>
+                                <li>Firefox</li>
+                                <li>Command Prompt</li>
+                                <li>Services</li>
+                                <li>Task Scheduler</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    Shutdown OneNote and OneDrive:
+                    <ol class='instructions' type='a'>
+                        <li>Right-click blank area of the Taskbar -&gt; Task Manager</li>
+                        <li>Startup apps</li>
+                        <li>Right-click ONENOTE.EXE -&gt; Disable</li>
+                        <li>Right-click OneDrive.exe -&gt; Disable</li>
+                        <li>Close Task Manager</li>
+                    </ol>
+                </li>
+                <li>
+                    Place the following icons on the Desktop:
+                    <ol class='instructions' type='a'>
+                        <li>
+                            Left side:
+                            <ol class='instructions' type='i'>
+                                <li>This PC</li>
+                                <li>Thunderbird - Shortcut Ctrl+Alt+T</li>
+                                <li>Firefox - Shortcut Ctrl+Alt+F</li>
+                                <li>Microsoft Edge</li>
+                                <li>Recycle Bin</li>
+                            </ol>
+                        </li>
+                        <li>
+                            Right side:
+                            <ol class='instructions' type='i'>
+                                <li>Calculator - Shortcut Ctrl+Alt+C</li>
+                                <li>Notepad - Shortcut Ctrl+Alt+N</li>
+                                <li>Command Prompt</li>
+                            </li>
+                        </ol>
+                    </ol>
+                </li>
+			</ol>
+		</div>
+	</div>
+</body>
+</html>

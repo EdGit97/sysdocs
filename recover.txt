@@ -1,0 +1,30 @@
+Files are stored on Google Drive and the flash drives in the exact way that the 
+files were configured on the hard drive.  To restore from any backup media, 
+simply copy the directory from that media to the hard drive using the following 
+table:
+Accounting -> C:\Accounting
+Backup     -> C:\Backup
+Documents  -> C:\Users\swane\Documents
+Legacy     -> C:\Legacy
+Music      -> C:\Users\swane\Music
+Pictures   -> C:\Users\swane\Pictures
+Src        -> C:\Src
+webdevenv  -> C:\webdevenv
+
+Flash drive backups are encrypted by VeraCrypt. The encryption password can
+be found on Google Drive at My Drive/Backup/pwds.zip or on the Android phone 
+at Simplenote:Passwords.
+
+To access a VeraCrypt partition:
+1. Insert the drive into a USB port.
+2. C>"C:\Program Files\VeraCrypt\VeraCrypt.exe" /v \Device\Harddisk1\Partition1 /p <mediaPwd> /q /s
+3. Open Windows Explorer and note the drive letter that was assigned to the VeraCrypt partition.
+4. Files can now be viewed or copied.
+5. When finished, unmount the drive: C>"C:\Program Files\VeraCrypt\VeraCrypt.exe" /u /q /s
+6. Remove the drive from the USB port.
+
+Once any restore is complete, it will be necessary to recreate Junctions that 
+are excluded from the backup:
+C:\Src\Legacy\cpm>mklink /j yazemanual C:\Legacy\CPM80\doc_html
+C:\Src\sysdocs>mklink /j pzDoc "C:\Program Files\PeaZip\res\share"
+C:\webdevenv\utilities\man>mklink /j dg C:\webdevenv\DataGen

@@ -1,0 +1,53 @@
+/* Styles for the table of contents pages that use widjits */
+div.widjit {
+    border-color: var(--wBorderColor);
+	border-radius: 15px;
+    border-style: solid;
+	border-width: 1px;
+    box-shadow: 0.45em 0.45em 2px 0 #E8E8E8;
+    cursor: pointer;
+	margin-bottom: 0.9em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0.1em;
+    width: 90%;    
+}
+
+div.widjit:hover {
+    background-color: #FAFAFA;
+}
+
+div.widjit:focus {
+    outline-color: var(--wBorderColor);
+    outline-style: solid;
+    outline-width: 1px;
+}
+
+p.widjitTitle {
+    font-family: SysDocsBold;
+	font-size: 14pt;
+	text-align: center;
+}
+
+p.widjitContent, table.widjitContent {
+    font-family: SysDocs;
+	font-size: 12pt;
+	margin-left: 5%;
+	margin-right: 5%;
+	text-align: left;
+}
+
+table.widjitContent {
+    margin-bottom: 0.7em;
+}
+
+td.widjitContents {
+    text-align: right; 
+    vertical-align: top;
+}
+
+a.widjitLink:focus {
+    outline-color: var(--wBorderColor);
+    outline-style: solid;
+    outline-width: 2px;
+}

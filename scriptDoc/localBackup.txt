@@ -1,0 +1,277 @@
+Help on module localBackup:
+
+NAME
+    localBackup
+
+DESCRIPTION
+    Run a local backup to some removable media, update media statistics and
+    email the results.
+
+    To run: C>py localBackup.py [ -h | --help ] [ tape | externalHD | CDRW | flash ]
+    To generate pydoc: py -m pydoc localBackup | py %PYTHONPATH%\pydocCleanup.py > ..\scriptDoc\localBackup.txt
+
+    The properties table contains parameters that specify the type of media to
+    update, name of the volume to update, the password to access the encrypted
+    media and the email address to notify upon completion.
+
+CLASSES
+    builtins.object
+        DirEntry
+    sysProps.SysProps(builtins.object)
+        Config
+
+    class Config(sysProps.SysProps)
+     |  Class to organize the collected data needed for all operations.
+     |
+     |  Method resolution order:
+     |      Config
+     |      sysProps.SysProps
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self)
+     |      Class initialization.
+     |
+     |  getMediaType(self) -> str
+     |      Determine the type of media to update.  If a valid media type was
+     |      entered on the command line, use it.  Otherwise use the media type
+     |      that was specified in the properties table.
+     |
+     |      Returns:
+     |          str: The media type from the command line if present, otherwise
+     |               the media type from the properties table.
+     |
+     |  validate(self) -> bool
+     |      Validate the configuration and generate any error messages.
+     |
+     |      Return:
+     |          bool: True if all validations pass, otherwise False.
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from sysProps.SysProps:
+     |
+     |  decodPropertyValue(self, value: str) -> str
+     |      Base64 decode a property value.
+     |
+     |      Args:
+     |          value (str): Value to decode.
+     |
+     |      Returns:
+     |          str: The Base64 decoded value.
+     |
+     |  getMediaPwd(self) -> str
+     |      Get the media password.
+     |
+     |      Returns:
+     |          str: The media password from the properties table or None if the value is missing.
+     |
+     |  getPinnedDirs(self) -> str
+     |      Get a list of the pinned directories
+     |
+     |      Returns:
+     |          list: A list of directories containing shortcuts that are pinned
+     |                to the taskbar.
+     |
+     |  getRecipientAdr(self) -> str
+     |      Get the notification address from the properties table.
+     |
+     |      Returns:
+     |          str: Email address where the backup notification will be sent or None if
+     |               that property is not present in the properties table.
+     |
+     |  getSmtpAccount(self) -> str
+     |      Determine the user account for the SMTP server to use when sending a
+     |      notification.
+     |
+     |      Returns:
+     |          str: The user account name for the SMTP server from the properties
+     |               table or None if the value is missing.
+     |
+     |  getSmtpPassword(self) -> str
+     |      Determine the password for the SMTP user account.
+     |
+     |      Returns:
+     |          str: The user account password for the SMTP server from the
+     |               properties table or None if the value is missing.
+     |
+     |  getSmtpPort(self) -> str
+     |      Determine the port of the SMTP server to use when sending a
+     |      notification.
+     |
+     |      Returns:
+     |          str: The port of the SMTP server from the properties table or None
+     |               if the value is missing.
+     |
+     |  getSmtpUrl(self) -> str
+     |      Determine the URL of the SMTP server to use when sending a
+     |      notification.
+     |
+     |      Returns:
+     |          str: The URL of the SMTP server from the properties table or None
+     |               if the value is missing.
+     |
+     |  getToolbarDirs(self) -> str
+     |      Get a list of the toolbar directories
+     |
+     |      Returns:
+     |          list: A list of directories containing shortcuts that are part
+     |                of a Start Menu toolbar.
+     |
+     |  getVolumeName(self) -> str
+     |      Determine the volume name of the backup destination media.
+     |
+     |      Returns:
+     |          str: The volume name from the properties table or None if the value
+     |               is missing.
+     |
+     |  loadProperties(self, fspec: str) -> dict
+     |      Load all properties from the property table.
+     |
+     |      Args:
+     |          fspec (str): The file specification of a property table (.dbf) to load.
+     |
+     |      Returns:
+     |          dict: A dictionary of all properties organized into sections.
+     |
+     |  loadSpecifiedPropSection(self, fspec: str, section: str) -> dict
+     |      Load the contents of a property table and return only the specified
+     |      sections.
+     |
+     |      Args:
+     |          fspec (str): The file specification of the property table to load.
+     |          section (str): Name of the section to return.
+     |
+     |      Returns:
+     |          dict: A dictionary of all properties that are part of the specified
+     |                section.
+     |
+     |  validateMedia(self) -> bool
+     |      Validate the media properties and generate any error messages.
+     |
+     |      Return:
+     |          bool: True if all validations pass, otherwise False.
+     |
+     |  validateSmtp(self) -> bool
+     |      Validate the SMTP properties and generate any error messages.
+     |
+     |      Return:
+     |          bool: True if all validations pass, otherwise False.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from sysProps.SysProps:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+    class DirEntry(builtins.object)
+     |  DirEntry(fileName: str, lastModified: datetime.datetime)
+     |
+     |  Class to hold a log file specification and associated last modified datetime.
+     |
+     |  Args:
+     |      fileName (str): Name of the file.
+     |      lastModified (datetime.datetime): Date that fileName was last modified.
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self, fileName: str, lastModified: datetime.datetime)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables
+     |
+     |  __weakref__
+     |      list of weak references to the object
+
+FUNCTIONS
+    delOldLogs() -> None
+        Delete old log files.
+
+    main() -> int
+        Main program.
+
+    mountDrive(volumeName: str, mediaPwd: str) -> str
+        Mount a VeraCrypt drive and determine the new drive letter.
+
+        Args:
+            volumeName (str): Name assigned to the removable media.
+            mediaPwd (str): Password used to access the removable media.
+
+        Returns:
+            str: The letter of the newly mounted drive or None if volume label
+                 cannot be found.
+
+    notify(config: localBackup.Config, msg: str) -> bool
+        Send the notification email
+
+        Args:
+            config (Config): Collected parameters for this run
+            msg (str): Body of the email.
+
+        Returns:
+            bool: True if the message was sent successfully, otherwise False.
+
+    runBackup(config: localBackup.Config) -> bool
+        Mount the removable media, backup to the removable media, then unmount the
+        removable media.
+
+        Args:
+            config (Config): Collected parameters for this run
+
+        Returns:
+            bool: True if the backup was completed successfully, otherwise False.
+
+    unmountDrive(driveLetter: str) -> None
+        Unmount the VeraCrypt drive.
+
+        Args:
+            driveLetter (str): Unmount this drive letter.
+
+    updateMedia(mediaType: str) -> str
+        Update the media usage in the DB.
+
+        Args:
+            mediaType (str): The type of media to update (tape | externalHD | CDRW | flash).
+
+        Returns:
+            str: Results of the update.
+
+DATA
+    BACKUP_JOB = r'C:\Src\sysdocs\backup\local.ffs_batch'
+    FFS_CMD = r'C:\Program Files\FreeFileSync\FreeFileSync.exe'
+    Final = typing.Final
+        Special typing construct to indicate final names to type checkers.
+
+        A final name cannot be re-assigned or overridden in a subclass.
+
+        For example::
+
+            MAX_SIZE: Final = 9000
+            MAX_SIZE += 1  # Error reported by type checker
+
+            class Connection:
+                TIMEOUT: Final[int] = 10
+
+            class FastConnector(Connection):
+                TIMEOUT = 1  # Error reported by type checker
+
+        There is no runtime checking of these properties.
+
+    HELP_FLAGS = ('-h', '--help')
+    LOG_DIR = r'C:\Src\sysdocs\backup\logs'
+    NL = '\n'
+    USAGE = 'usage: py localBackup.py [ -h | --help ] [ tape | externalHD ...
+    VERACRYPT_CMD = r'C:\Program Files\VeraCrypt\VeraCrypt.exe'
+    __annotations__ = {'BACKUP_JOB': typing.Final[str], 'FFS_CMD': typing....
+
+FILE
+    c:\src\sysdocs\generate\localbackup.py
+
+

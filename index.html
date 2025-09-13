@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel='stylesheet' href='include/sysdocs.css' type='text/css'>
+    <link rel='stylesheet' href='include/widjit.css' type='text/css'>
+    <link rel="icon" href="images/mc.png" type="image/x-icon" />
+	<script type='text/javascript' src='include/sysdocs.js'></script>
+	<script type='text/javascript' src='include/widjits.js'></script>
+</head>
+<body>
+    <div class='main'>
+	    <script type='text/javascript'>makePageHead(rootSys,	null, homeLinks.none, false);</script>
+		<div id='contentDiv' class='content'>
+			<script type='text/javascript'>
+				setContentHeight();
+			</script>
+			<div class='widjit' tabindex='10' autofocus onclick='location.href="sysdocs.jsp";' onkeyup='javascript: handleKeyUp(this);'>
+				<p class='widjitTitle'><img src='images/win11.png' alt='Windows Logo' class='logo'>Windows 11</p>
+				<p class='widjitContent'>
+					Details of the Windows system configuration and operations.
+				</p>
+				<p id='win' class='widjitContent'>
+				    Contents:
+					<script type='text/javascript'>
+						//loadTocFromPage('win', 'sysdocs.jsp');
+                        widjitTargets('win', 'sysdocs.jsp');
+					</script>
+				</p>
+			</div>
+			<div class='widjit' tabindex='20' autofocus onclick='location.href="winTest.html";' onkeyup='javascript: handleKeyUp(this);'>
+				<p class='widjitTitle'><img src='images/win10.png' alt='Windows Logo' class='logo'>Windows 10 Test</p>
+				<p class='widjitContent'>
+					Details of the Windows Test system configuration.
+				</p>
+				<p id='winTest' class='widjitContent'>
+				    Contents:
+					<script type='text/javascript'>
+                        widjitTargets('winTest', 'winTest.html');
+					</script>
+				</p>
+			</div>
+			<div class='widjit' tabindex='30' onclick='location.href="androidDocs.html";' onkeyup='javascript: handleKeyUp(this);'>
+				<p class='widjitTitle'><img src='images/droid.png' alt='Android Logo' class='logo'>Android</p>
+				<p class='widjitContent'>
+					Details of the Android system configuration and operations.
+				</p>
+				<p id='adr' class='widjitContent'>
+				    Contents:
+					<script type='text/javascript'>
+						//loadTocFromPage('adr', 'androidDocs.html');
+                        widjitTargets('adr', 'androidDocs.html');
+					</script>
+				</p>
+			</div>
+			<div class='widjit' tabindex='40' onclick='location.href="nookDocs.html";' onkeyup='javascript: handleKeyUp(this);'>
+				<p class='widjitTitle'><img src='images/nook.png' alt='Nook Logo' class='logo'>Nook</p>
+				<p class='widjitContent'>
+					Details of the Nook system configuration.
+				</p>
+				<p id='nook' class='widjitContent'>
+				    Contents:
+					<script type='text/javascript'>
+						//loadTocFromPage('nook', 'nookDocs.html');
+                        widjitTargets('nook', 'nookDocs.html');
+					</script>
+				</p>
+			</div>
+			<div class='widjit' tabindex='50' onclick='location.href="router.html";' onkeyup='javascript: handleKeyUp(this);'>
+				<p class='widjitTitle'><img src='images/router.png' alt='Router Icon' class='logo'>LinkSys Router</p>
+				<p class='widjitContent'>
+					Details of the LinkSys Router configuration.
+				</p>
+				<p id='router' class='widjitContent'>
+				    Contents:
+					<script type='text/javascript'>
+						loadTocFromPage('router', 'router.html');
+					</script>
+				</p>
+			</div>
+			<div class='widjit' tabindex='60' onclick='location.href="p1100.html";' onkeyup='javascript: handleKeyUp(this);'>
+				<p class='widjitTitle'><img src='images/hp.png' alt='HP Icon' class='logo'>HP LaserJet P1102w</p>
+				<p class='widjitContent'>
+					Details of the HP LaserJet P1102w configuration.
+				</p>
+				<p id='p1102w' class='widjitContent'>
+				    Contents:
+					<script type='text/javascript'>
+						loadTocFromPage('p1102w', 'p1100.html');
+					</script>
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

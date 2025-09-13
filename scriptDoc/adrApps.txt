@@ -1,0 +1,85 @@
+Help on module adrApps:
+
+NAME
+    adrApps
+
+DESCRIPTION
+    Generate a Javascript file that contains a list of the apps installed on an
+    Android device.
+
+    To run: C>py adrApps.py
+    To generate pydoc:
+        py -m pydoc adrApps | py %PYTHONPATH%\pydocCleanup.py > ..\scriptDoc\adrApps.txt
+
+FUNCTIONS
+    intro() -> bool
+        Determine if an Android device is connected and output the intro line.
+
+        Returns:
+            bool: True if an Android device is connected, otherwise false
+
+    loadPkgs() -> list
+        Load a list of packages that are installed on the Android device.
+
+        Returns:
+            list: A list of package data.
+
+    main() -> int
+        Main program.
+
+        Returns:
+            int: System return code.
+
+    procPkg(pkg: str) -> str
+        Process the data from an individual package.
+
+        Args:
+            pkg (str): Data for a single package.
+
+        Returns:
+            str: The application name referenced by the package.
+
+    procPkgs(pkgs: list) -> list
+        Process a list of packages.
+
+        Args:
+            pkgs (list): A list of package data.
+
+        Returns:
+            list: A list of application names.
+
+    writeAppList(appNms: list) -> None
+        Write the application list to the Javscript file.
+
+        Args:
+            appNms (list): List of application names.
+
+DATA
+    ANDROID_BRIDGE = r'C:\Src\CellPhone\platform-tools\adb.exe'
+    Final = typing.Final
+        Special typing construct to indicate final names to type checkers.
+
+        A final name cannot be re-assigned or overridden in a subclass.
+
+        For example::
+
+            MAX_SIZE: Final = 9000
+            MAX_SIZE += 1  # Error reported by type checker
+
+            class Connection:
+                TIMEOUT: Final[int] = 10
+
+            class FastConnector(Connection):
+                TIMEOUT = 1  # Error reported by type checker
+
+        There is no runtime checking of these properties.
+
+    JS_FILE_SPEC = r'C:\Src\sysdocs\include\apps.js'
+    JS_VAR_DECL = 'var androidApps = [ '
+    NL = '\n'
+    __annotations__ = {'ANDROID_BRIDGE': typing.Final[str], 'JS_FILE_SPEC'...
+
+FILE
+    c:\src\sysdocs\generate\adrapps.py
+
+

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel='stylesheet' href='include/sysdocs.css' type='text/css'>
+    <link rel='stylesheet' href='include/widjit.css' type='text/css'>
+    <link rel="icon" href="images/droid.png" type="image/x-icon" />
+	<script type='text/javascript' src='include/sysdocs.js'></script>
+	<script type='text/javascript' src='include/widjits.js'></script>
+</head>
+<body>
+    <div class='main'>
+	    <script type='text/javascript'>makePageHead(androidSys,	null, homeLinks.index, false);</script>
+		<div id='contentDiv' class='content'>
+			<script type='text/javascript'>
+				setContentHeight();
+			</script>
+			<div class='widjit' tabindex='10' autofocus onclick='location.href="asetup.html";' onkeyup='javascript: handleKeyUp(this);'>
+				<p id='apps' name='toc' class='widjitTitle'><img src='images/droid.png' alt='Android Logo' class='logo'>Configuration</p>
+				<p class='widjitContent'>
+					Identification information and site support setup.
+				</p>
+				<p id='config' class='widjitContent'>
+				    Contents:
+					<script type='text/javascript'>
+						loadTocFromPage('config', 'asetup.html');
+					</script>
+				</p>
+			</div>
+			<div class='widjit' tabindex='20' autofocus onclick='location.href="aapps.html";' onkeyup='javascript: handleKeyUp(this);'>
+				<p id='applst' name='toc' class='widjitTitle'><img src='images/apps.png' alt='Applications Logo' class='logo'>Applications</p>
+				<p class='widjitContent'>
+					List of installed applications.
+				</p>
+				<p id='applist' class='widjitContent'>
+				    Contents:
+					<script type='text/javascript'>
+						loadTocFromPage('applist', 'aapps.html');
+					</script>
+				</p>
+			</div>
+			<div class='widjit' tabindex='30' onclick='location.href="abackup.html";' onkeyup='javascript: handleKeyUp(this);'>
+				<p id='backup' name='toc' class='widjitTitle'><img src='images/backup.png' alt='Backup Logo' class='logo'>Backup Operations</p>
+				<p class='widjitContent'>
+				    Instructions for configuring backups and restores.
+				</p>
+				<p id='backups' class='widjitContent'>
+				    Contents:
+					<script type='text/javascript'>
+						loadTocFromPage('backups', 'abackup.html');
+					</script>
+				</p>
+			</div>
+			<div class='widjit' tabindex='40' onclick='location.href="anotes.html";' onkeyup='javascript: handleKeyUp(this);'>
+				<p id='note' name='toc' class='widjitTitle'><img src='images/notes.png' alt='Notes Logo' class='logo'>Notes</p>
+				<p class='widjitContent'>
+					Miscellaneous information about the Android system.
+				</p>
+				<p id='notes' class='widjitContent'>
+				    Contents:
+					<script type='text/javascript'>
+						loadTocFromPage('notes', 'anotes.html');
+					</script>
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

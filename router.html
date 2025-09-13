@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel=stylesheet href='include/sysdocs.css' type='text/css'>
+    <link rel="icon" href="images/router.png" type="image/x-icon" />
+	<script type='text/javascript' src='include/sysdocs.js'></script>
+</head>
+<body>
+    <div class='main'>
+	    <script type='text/javascript'>makePageHead(linkSys, null, homeLinks.index, true);</script>
+		<div id='contentDiv' class='content'>
+			<script type='text/javascript'>
+				setContentHeight();
+			</script>
+			<p class='instructions'>
+			    This page describes the LinkSys router configuration.
+			</p>
+			<h2 id='Router' name='toc'><img src='images/router.png' alt='Router Icon' class='logo'>Router</h2>
+            <table class='instructions'>
+                <tr><td class='hdr'>Model</td><td>LinkSys AC1000 Wi-Fi Router E5350</td></tr>
+                <tr><td class='hdr'>Serial</td><td>30K10M2CA08376</td></tr>
+                <tr><td class='hdr'>IP Address</td><td><a href='http://192.168.1.1' target='_blank'>192.168.1.1</a></td></tr>
+                <tr><td class='hdr'>MAC Address</td><td>E8:9F:80:C1:5D:1A</td></tr>
+                <tr><td class='hdr'>Router Name</td><td>SwanLink3</td></tr>
+                <tr><td class='hdr'>5GHz SSID</td><td>Swan50</td></tr>
+                <tr><td class='hdr'>2.4GHz SSID</td><td>Swan24</td></tr>
+                <tr><td class='hdr'>Guest SSID</td><td>Swan24-guest</td></tr>
+            </table>
+			<h4>Static IPs</h4>
+			<p class='instructions'>
+                 Under the Configuration tab, click the DHCP Reservation button and add the
+                 following devices to the Reserved IP list:
+            </p>
+            <table class='instructions'>
+                <tr><th>Device Name</th><th class='mediaL'>Static IP Address</th><th class='mediaL'>Notes</th></tr>
+                <tr><td class='hdr'>ED-HP2</td><td class='mediaL'>192.168.1.116</td><td class='mediaL'>Ed&apos;s HP Laptop</td></tr>
+                <tr><td class='hdr'>NPI0D9C0E</td><td class='mediaL'>192.168.1.114</td><td class='mediaL'>HP LaserJet P1102w</td></tr>
+            </table>
+			<h2 id='Passwords' name='toc'><img src='images/pwd.png' alt='Password Icon' class='logo'>Passwords</h2>
+			<p class='instructions'>
+			    Passwords for the Router and all SSIDs are stored in C:\Backup\pwds.zip.
+                For details see <a href='notes.html#Passwords'>Windows System:Passwords</a>
+			</p>
+		</div>
+	</div>
+</body>
+</html>

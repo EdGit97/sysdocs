@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'SysDocsBold';
+    src: url('fonts/OpenSans-CondBold.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'SysDocs';
+    src: url('fonts/OpenSans-CondLight.ttf') format("truetype");
+}
+
+:root {
+    --wBorderColor: #AAAAAA;
+}
+
+body {
+    background-color: #E8E8E8;
+    background-image: url('../images/manualsBgr3.png');
+	background-size: 100% 100%;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+div.main {
+    background-color: white;
+	height: 100vh;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 9in;
+    overflow-x: hidden;
+    overflow-y: auto;
+	padding-left: 1em;
+	padding-right: 1em;
+	width: 80%;
+}
+
+div.content {
+    overflow-y: auto;
+}
+
+p.title {
+    font-family: SysDocsBold;
+	font-size: 18pt;
+	text-align: center;
+}
+
+a.titleLink {
+    font-family: SysDocs;
+	font-size: 12pt;
+}
+
+a.titleLink:focus {
+    outline-color: var(--wBorderColor);
+    outline-style: solid;
+    outline-width: 2px;
+}
+
+h2, h3 {
+    font-family: SysDocs;
+}
+
+h4 {
+    font-family: SysDocs;
+    font-weight: normal;
+	text-decoration: underline;
+}
+
+p.instructions, ol.instructions, ul.instructions, table.instructions {
+    font-family: SysDocs;
+	font-size: 12pt;
+    margin-right: 1em;
+}
+
+p.instructions:first-child {
+    margin-top: 0;
+}
+
+img.logo {
+    height: 1em;
+    margin-right: 0.25em;
+}
+
+td.hdr {
+    font-weight: bold;
+    padding-right: 0.5em;
+    text-align: right;
+}
+
+code {
+    font-family: monospace;
+    font-size: 8pt;
+}
+
+p.code {
+    font-family: monospace;
+    font-size: 8pt;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+th.mediaL {
+    padding-left: 2em;
+    text-align: left;
+}
+
+td.mediaC {
+    text-align: center;
+}
+
+td.mediaL {
+    padding-left: 2em;
+}
+
+td.mediaR {
+    padding-right: 5%;
+	text-align: right;
+}
+
+label.media {
+    display: inline-block;
+    margin-right: 0.5em;
+    text-align: right;
+    width: 7em;
+}
+
+td.testFiles, th.testFiles {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #BBBBBB;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    vertical-align: top;
+}

@@ -1,0 +1,203 @@
+/* Stylesheet for the Windows backups page */
+h2.mediaMax {
+    margin-top: 0;
+    text-align: center;
+}
+
+div.mediaMax {
+    background-color: #FAFAFA;
+	border-radius: 15px;
+    border-style: double;
+    border-width: 5px;
+    box-shadow: 0.45em 0.45em 2px 0 #DFDFDF;
+    display: none;
+    left: 35%;
+    padding: 1.5em;
+    position: absolute;
+    top: 25%;
+    width: 30%;
+    z-index: 1;
+}
+
+p.mediaList {
+    float: left; 
+    font-family: SysDocs;
+	font-size: 12pt;
+    margin-right: 2em;
+    margin-top: 0;
+}
+
+div.logDisplay {
+    background-color: #FDFDFD;
+	border-radius: 7px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0.45em 0.45em 2px 0 #DFDFDF;
+    display: none;
+    height: 70%;
+    left: max(calc(50vw - 35%), 49vw - 4in);
+    padding: 1.5em;
+    position: absolute;
+    top: 8%;
+    width: min(calc(100vw - 35%), 8in);
+    z-index: 1;
+}
+
+object.logContent {
+    display: inline-block;
+    height: 93%;
+    overflow-x: auto;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+button.logClose {
+    background-color: transparent;
+    border-color: black;
+	border-radius: 7px;
+    border-style: solid;
+    border-width: 1px;
+    float: right;
+    font-family: sans-serif;
+    font-size: 14pt;
+    font-weight: 700;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+h3.logFn {
+    margin-top: 0;
+    text-align: center;
+}
+
+.mmButton {
+    width: 4em;
+}
+
+div.readme {
+    font-family: monospace;
+}
+
+caption.jobs {
+    caption-side: top;
+	font-weight: bold;
+}
+
+table.tasks {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 95%;
+}
+
+td.jobName {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    text-align: right;
+}
+
+td.time {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    text-align:center;
+}
+
+td.links {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+table.media {
+    font-family: SysDocs;
+	font-size: 12pt;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+	width: 90%;
+}
+
+div.media, div.media2 {
+    font-family: SysDocs;
+	font-size: 12pt;
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+div.media2 {
+    margin-bottom: 0;
+	text-align: left;
+}
+div.errors, ul.errors {
+    color: red;
+    font-family: SysDocs;
+	font-size: 12pt;
+	margin-bottom: 1em;
+	margin-left: 5%;
+}
+
+ul.errors {
+	margin-left: 0;
+}
+
+tfoot {
+    font-size: smaller;
+}
+
+hr.foot {
+    border-bottom-width: 1px;
+    border-top-width: 0;
+}
+
+tr.odd {
+    background-color: #EEEEEE;
+}
+
+tr.red {
+    color: red;
+}
+
+tr.oddRed {
+    background-color: #EEEEEE;
+    color: red;
+}
+
+table.properties {
+    border-collapse: collapse;
+    font-family: SysDocs;
+	font-size: 12pt;
+    margin-bottom: 1em;
+    margin-left: 1.5em;
+}
+
+td.propL {
+    padding-right: 0;
+	text-align: left;
+    vertical-align: top;
+}
+
+td.propR {
+    padding-right: 0;
+	text-align: right;
+    vertical-align: top;
+}
+
+div.properties {
+    font-family: SysDocs;
+	font-size: 12pt;
+	margin-bottom: 1em;
+    margin-left: 1.5em;
+	text-align: left;
+}
+
+pre.metadata {
+    font-family: monospace;
+    font-size: 8pt;
+    margin-bottom: 1.5em;
+    margin-left: 4em;
+    margin-right: 6em;
+    margin-top: 0;
+}
+
+textarea.property {
+    overflow: auto;
+    white-space: nowrap; 
+}

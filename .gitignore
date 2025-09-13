@@ -1,0 +1,8 @@
+*.class
+*.log
+archive/
+backup/logs/
+data/
+javadoc/
+pzDoc/
+.metadata/
