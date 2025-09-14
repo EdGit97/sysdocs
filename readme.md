@@ -4,6 +4,8 @@ The System Documentation site was created in order to document the details
 of the configuration of all of my systems. Each page documents a specific 
 area of the system configuration.  THe following areas are documented:
 
+| System | System |
+| --- | --- |
 | Windows 11 Laptop | Nook Reader        |
 | Windows 10 Laptop | LinkSys Router     |
 | Android Phone     | HP LaserJet P1102w |
