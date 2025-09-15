@@ -23,9 +23,9 @@ area of the system configuration.
 ## Git Commands
 
 ### Switch Repository
-git branch -M main
+git branch -M main\
 git remote add origin https://github.com/<Git User Name>/<Repository Name>
 
 ### Show Current Repository
-git remote show
+git remote show\
 git remote get-url origin
