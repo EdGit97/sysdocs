@@ -2,36 +2,30 @@
 
 The System Documentation site was created in order to document the details 
 of the configuration of all of my systems. Each page documents a specific 
-area of the system configuration.  THe following areas are documented:
+area of the system configuration.  
 
-| System | System |
-| --- | --- |
-| Windows 11 Laptop | Nook Reader        |
-| Windows 10 Laptop | LinkSys Router     |
-| Android Phone     | HP LaserJet P1102w |
+## Systems
 
-
-
-"C:\Program Files\Git\git-bash.exe" --cd="C:\Src\txt2tags\docGen\src"
-
-Credential Manager - Remove Window git entries
-
-https://docs.github.com/en/account-and-profile/how-tos/setting-up-and-managing-your-personal-account-on-github/managing-your-personal-account/managing-multiple-accounts
+- Windows 11 Laptop
+- Windows 10 Laptop
+- Android Phone
+- Nook Reader
+- LinkSys Router
+- HP LaserJet P1102w
 
 
-git config --global credential.https://github.com.useHttpPath true
-git push --set-upstream origin main
+## Github Sites
 
+- https://github.com/EdGit97/sysdocs - This repository
+- https://github.com/EdGit97/JTxt2Tags - Java txt2tags repository
+- https://github.com/cccc75/CAP - Club Administrator & Publisher repository
 
+## Git Commands
+
+### Switch Repository
+git branch -M main
+git remote add origin https://github.com/<Git User Name>/<Repository Name>
+
+### Show Current Repository
 git remote show
 git remote get-url origin
-
-
-Create new repository
-echo "# JTxt2Tags" >> README.md
-git init
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/EdGit97/JTxt2Tags.git
-git push -u origin ain
